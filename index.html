@@ -38,11 +38,10 @@
             
             <!-- Dropdown: About The Label -->
             <div class="relative group">
-                <button id="dropdown-btn" class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
+                <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
                     About The Label <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
                 </button>
-                <!-- Isi Dropdown Menu -->
-                <div id="dropdown-menu" class="absolute left-0 mt-1 w-48 bg-[#161415] border border-zinc-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                <div class="absolute left-0 mt-1 w-48 bg-[#161415] border border-zinc-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
                     <a href="#about" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">About The Label</a>
                     <a href="#roster" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Roster</a>
                     <a href="#discography" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Discography</a>
@@ -51,6 +50,18 @@
 
             <a href="#demo" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Demo Submission</a>
             <a href="#licensing" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Licensing</a>
+
+            <!-- Dropdown: Legal (All Rights Reserved, Privacy, Terms) -->
+            <div class="relative group">
+                <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
+                    Legal <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div class="absolute left-0 mt-1 w-52 bg-[#161415] border border-zinc-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                    <a href="#rights" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">All Rights Reserved</a>
+                    <a href="#privacy" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Privacy Policy</a>
+                    <a href="#terms" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Terms of Service</a>
+                </div>
+            </div>
         </nav>
 
         <!-- Tombol Menu Mobile (Hamburger untuk Layar Kecil) -->
@@ -78,10 +89,18 @@
 
         <a href="#demo" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Demo Submission</a>
         <a href="#licensing" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Licensing</a>
-        <div class="pt-3 border-t border-zinc-800 space-y-1">
-            <a href="#rights" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:bg-zinc-800/60 text-xs">All Rights Reserved</a>
-            <a href="#privacy" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:bg-zinc-800/60 text-xs">Privacy Policy</a>
-            <a href="#terms" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:bg-zinc-800/60 text-xs">Terms Of Service</a>
+
+        <!-- Mobile Accordion Legal -->
+        <div>
+            <button id="mobile-legal-btn" class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition text-left">
+                <span>Legal</span>
+                <i id="mobile-legal-chevron" class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div id="mobile-legal-content" class="hidden pl-4 space-y-1 mt-1 border-l border-zinc-800 ml-4">
+                <a href="#rights" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">All Rights Reserved</a>
+                <a href="#privacy" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">Privacy Policy</a>
+                <a href="#terms" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">Terms of Service</a>
+            </div>
         </div>
     </div>
 
@@ -227,6 +246,10 @@
         const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
         const mobileChevron = document.getElementById('mobile-chevron');
 
+        const mobileLegalBtn = document.getElementById('mobile-legal-btn');
+        const mobileLegalContent = document.getElementById('mobile-legal-content');
+        const mobileLegalChevron = document.getElementById('mobile-legal-chevron');
+
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -236,11 +259,18 @@
             mobileChevron.classList.toggle('rotate-180');
         });
 
+        mobileLegalBtn.addEventListener('click', () => {
+            mobileLegalContent.classList.toggle('hidden');
+            mobileLegalChevron.classList.toggle('rotate-180');
+        });
+
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
                 mobileDropdownContent.classList.add('hidden');
+                mobileLegalContent.classList.add('hidden');
                 mobileChevron.classList.remove('rotate-180');
+                mobileLegalChevron.classList.remove('rotate-180');
             });
         });
     </script>
