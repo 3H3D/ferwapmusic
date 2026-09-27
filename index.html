@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferwap music - Independent Record Label</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 flex flex-col md:flex-row min-h-screen">
+
+    <!-- 1. MOBILE NAVBAR (Hanya tampil di layar HP / Screen kecil) -->
+    <header class="md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2b2529] border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center font-bold text-white border border-zinc-700">W</div>
+            <span class="text-xl font-medium tracking-wide">Ferwap</span>
+        </div>
+        <button id="menu-btn" class="text-zinc-300 hover:text-white focus:outline-none text-xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Dropdown Menu Mobile (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 z-40 bg-[#2b2529] border-b border-zinc-800 p-4 space-y-2 text-sm font-medium shadow-xl">
+        <a href="#home" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">Home</a>
+        <a href="#about" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">About The Label</a>
+        <a href="#roster" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">Roster</a>
+        <a href="#discography" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">Discography</a>
+        <a href="#demo" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">Demo</a>
+        <a href="#licensing" class="mobile-link block px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800">Licensing</a>
+        <div class="pt-2 border-t border-zinc-700/50 space-y-1">
+            <a href="#rights" class="mobile-link block px-4 py-1.5 rounded-lg text-zinc-300 hover:bg-zinc-800 text-xs">All Rights Reserved</a>
+            <a href="#privacy" class="mobile-link block px-4 py-1.5 rounded-lg text-zinc-300 hover:bg-zinc-800 text-xs">Privacy Policy</a>
+            <a href="#terms" class="mobile-link block px-4 py-1.5 rounded-lg text-zinc-300 hover:bg-zinc-800 text-xs">Terms Of Service</a>
+        </div>
+    </div>
+
+
+    <!-- 2. DESKTOP SIDEBAR (Hanya tampil di layar Tablet/Laptop ke atas) -->
+    <aside class="w-64 bg-[#2b2529] border-r border-zinc-800 hidden md:flex flex-col justify-between shrink-0 fixed h-screen top-0 left-0 overflow-y-auto">
+        <div>
+            <!-- Logo & Brand -->
+            <div class="p-6 flex items-center gap-3">
+                <div class="w-8 h-8 bg-zinc-900 rounded flex items-center justify-center font-bold text-white border border-zinc-700">W</div>
+                <span class="text-xl font-medium tracking-wide">Ferwap</span>
+            </div>
+            <!-- Menu Navigasi Samping -->
+            <nav class="mt-2 space-y-1 px-4 text-sm font-medium">
+                <a href="#home" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">Home</a>
+                <a href="#about" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">About The Label</a>
+                <a href="#roster" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">Roster</a>
+                <a href="#discography" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">Discography</a>
+                <a href="#demo" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">Demo</a>
+                <a href="#licensing" class="flex items-center px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition">Licensing</a>
+                <div class="pt-4 pb-2 border-t border-zinc-700/50 mt-4 space-y-1">
+                    <a href="#rights" class="flex items-center px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition text-xs">All Rights Reserved</a>
+                    <a href="#privacy" class="flex items-center px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition text-xs">Privacy Policy</a>
+                    <a href="#terms" class="flex items-center px-4 py-2 rounded-lg text-zinc-300 hover:bg-zinc-800/50 transition text-xs">Terms Of Service</a>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+
+    <!-- 3. KONTEN UTAMA (Bergeser ke kanan di desktop, full width di HP) -->
+    <main class="flex-1 flex flex-col justify-between bg-zinc-950 p-6 md:p-12 md:ml-64 pt-24 md:pt-12">
+        <div class="max-w-4xl mx-auto w-full space-y-16">
+            
+            <!-- SECTION: HOME -->
+            <section id="home" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg text-center space-y-6 pt-12">
+                <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Ferwap music</h1>
+                <h2 class="text-sm md:text-base font-extrabold tracking-widest uppercase">INDEPENDENT RECORD LABEL & AUDIO PRODUCTION HOUSE</h2>
+                <div class="space-y-3 pt-4">
+                    <h3 class="font-bold text-lg">ABOUT THE LABEL</h3>
+                    <p class="text-sm md:text-base text-zinc-700 leading-relaxed max-w-2xl mx-auto">
+                        Ferwap Music is an independent music entity dedicated to empowering talent and delivering high-quality audio production. We focus on catalog development, copyright management, and strategic collaborations among independent producers and artists.
+                    </p>
+                </div>
+                <div class="pt-6">
+                    <h3 class="font-bold text-lg mb-2">CURRENT ROSTER & COLLABORATORS</h3>
+                </div>
+            </section>
+
+            <!-- SECTION: ABOUT THE LABEL -->
+            <section id="about" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 pt-12">
+                <h2 class="text-xl font-bold text-zinc-500">Ferwap music</h2>
+                <div class="space-y-4 text-sm md:text-base text-zinc-800 leading-relaxed">
+                    <p>
+                        Ferwap Music is an independent record label, creative hub, and audio production house dedicated to empowering visionary music creators, audio engineers, and recording artists. Built on a foundation of creative independence and artistic integrity, we focus on long-term catalog development, audio engineering excellence, and strategic global distribution.
+                    </p>
+                    <p>
+                        As a modern music entity, Ferwap Music bridges the gap between raw independent talent and global digital platforms. We provide complete end-to-end support for our roster—ranging from original composition, vocal tracking, and advanced mixing/mastering to copyright administration, digital asset protection, and multi-platform promotional campaigns.
+                    </p>
+                    <p>
+                        Our mission is to foster meaningful collaborations among independent producers, songwriters, and vocalists while curating a distinct sound identity across diverse contemporary genres. By leveraging innovative production workflows and modern digital infrastructure, Ferwap Music ensures that every project reaches its full creative potential and finds its rightful audience worldwide.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION: ROSTER -->
+            <section id="roster" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 pt-12">
+                <h2 class="text-xl font-bold">Roster</h2>
+                <p class="text-zinc-700 text-sm md:text-base">
+                    Daftar artis dan musisi independen yang tergabung bersama label Ferwap Music akan segera diperbarui di sini.
+                </p>
+            </section>
+
+            <!-- SECTION: DISCOGRAPHY -->
+            <section id="discography" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 pt-12">
+                <h2 class="text-xl font-bold">Discography</h2>
+                <p class="text-zinc-700 text-sm md:text-base">
+                    Koleksi rilisan album, single, dan karya audio produksi dari roster kami.
+                </p>
+            </section>
+
+            <!-- SECTION: DEMO -->
+            <section id="demo" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 text-sm md:text-base pt-12">
+                <h2 class="text-xl font-bold text-zinc-900">Demo Submission</h2>
+                <p class="text-zinc-700 leading-relaxed">
+                    Ferwapmusic is constantly seeking innovative, passionate, and visionary talent to join our independent roster. Whether you are an emerging artist, vocalist, or music producer, we provide a collaborative space to develop your catalog and refine your sound.
+                </p>
+                <div class="space-y-2 font-semibold"><p>Submission Guidelines:</p></div>
+                <ul class="list-disc pl-5 space-y-2 text-zinc-700">
+                    <li><strong>Format:</strong> We only accept private streaming links (SoundCloud, Google Drive, or Dropbox). Please do not attach raw MP3/WAV files directly via email.</li>
+                    <li><strong>Track Selection:</strong> Send 2 to 3 of your best unreleased tracks. Make sure your audio links are set to accessible permissions.</li>
+                    <li><strong>Metadata & Info:</strong> Include your official artist name, a short biography, active social media links, and clear contact information.</li>
+                </ul>
+                <div class="space-y-2 font-semibold pt-2"><p>What We Look For:</p></div>
+                <ul class="list-disc pl-5 space-y-2 text-zinc-700">
+                    <li>Originality and a strong artistic identity.</li>
+                    <li>Solid songwriting, production potential, and high-quality arrangements.</li>
+                    <li>Dedication to long-term catalog development and strategic collaboration.</li>
+                </ul>
+                <p class="text-zinc-700 text-xs pt-2">
+                    Due to the high volume of submissions, our A&R team manually reviews every entry. If your music fits, we will reach out to you within 2–3 weeks.
+                </p>
+                <div class="text-center pt-4">
+                    <a href="mailto:demo@ferwapmusic.com" class="inline-block border border-zinc-400 px-6 py-2 rounded text-xs font-semibold hover:bg-zinc-100 transition">Submit Demo Here</a>
+                </div>
+            </section>
+
+            <!-- SECTION: LICENSING -->
+            <section id="licensing" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 text-sm md:text-base pt-12">
+                <h2 class="text-xl font-bold">Music Licensing</h2>
+                <p class="text-zinc-700 leading-relaxed">
+                    Ferwapmusic manages an independent catalog of original recordings and compositions tailored for sync licensing across worldwide media platforms. We partner with content creators, film directors, game developers, advertising agencies, and production houses.
+                </p>
+                <p class="font-semibold">Our Licensing Services:</p>
+                <ul class="list-disc pl-5 space-y-2 text-zinc-700">
+                    <li><strong>Synchronization Rights:</strong> Master and publishing clearance for film, television, documentaries, video games, and commercial advertisements.</li>
+                    <li><strong>Custom Audio Production:</strong> Original sound design, mix engineering, and bespoke track production customized to meet project-specific briefs.</li>
+                    <li><strong>Digital Media & Branded Content:</strong> Pre-cleared music assets for digital campaigns, social media content, and corporate videos.</li>
+                </ul>
+                <p class="font-semibold pt-2">How to Request a License:</p>
+                <ol class="list-decimal pl-5 space-y-2 text-zinc-700">
+                    <li>Project title and brief description (e.g., commercial, short film, game).</li>
+                    <li>Specific track title(s) requested.</li>
+                    <li>Media format and distribution territory.</li>
+                    <li>Term/Duration of the license and your estimated budget.</li>
+                </ol>
+            </section>
+
+            <!-- SECTION: ALL RIGHTS RESERVED -->
+            <section id="rights" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 text-sm md:text-base pt-12">
+                <h2 class="text-xl font-bold">All Rights Reserved</h2>
+                <p class="text-zinc-700 leading-relaxed">
+                    All content contained within this website—including but not limited to audio recordings, musical compositions, visual artwork, logos, graphics, sound samples, text, and overall web design—is the exclusive property of Ferwap Music or its licensors and is protected by applicable national and international copyright and intellectual property laws.
+                </p>
+            </section>
+
+            <!-- SECTION: PRIVACY POLICY -->
+            <section id="privacy" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 text-sm md:text-base pt-12">
+                <h2 class="text-xl font-bold">Privacy Policy</h2>
+                <p class="text-zinc-700 leading-relaxed">
+                    Ferwap Music is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists.
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-zinc-700">
+                    <li><strong>Data Collection:</strong> We collect personal information that you voluntarily provide when completing demo submission forms or reaching out via our contact channels.</li>
+                    <li><strong>Use of Information:</strong> Collected information is used strictly for professional communication, A&R demo evaluations, and audio licensing processing.</li>
+                    <li><strong>Data Security & Protection:</strong> We implement appropriate security measures to protect your personal data against unauthorized access.</li>
+                </ul>
+            </section>
+
+            <!-- SECTION: TERMS OF SERVICE -->
+            <section id="terms" class="bg-white text-zinc-900 p-6 md:p-12 rounded-xl shadow-lg space-y-6 text-sm md:text-base pt-12">
+                <h2 class="text-xl font-bold">Terms of Service</h2>
+                <p class="text-zinc-700 leading-relaxed">
+                    Welcome to the official website of Ferwap Music. By accessing and using this website, you acknowledge that you have read, understood, and agreed to be bound by the following Terms of Service:
+                </p>
+                <ul class="list-disc pl-5 space-y-2 text-zinc-700">
+                    <li><strong>Site Usage:</strong> You agree to use this site solely for lawful purposes.</li>
+                    <li><strong>Demo Submissions:</strong> Submitting music tracks does not automatically establish a contractual relationship or financial obligation.</li>
+                    <li><strong>Limitation of Liability:</strong> Your use of this website is entirely at your own risk.</li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- Footer Bawah -->
+        <footer class="mt-20 border-t border-zinc-800 pt-8 text-center text-xs text-zinc-400 space-y-4">
+            <div class="flex justify-center gap-6 text-lg">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Ferwap music. All Rights Reserved | <a href="#privacy" class="underline">Privacy Policy</a> | <a href="#terms" class="underline">Terms Of Service</a></p>
+        </footer>
+    </main>
+
+    <!-- Script JavaScript untuk Tombol Menu HP (Mobile Toggle) -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle buka/tutup menu saat tombol garis tiga diklik
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Otomatis menutup menu HP saat salah satu menu dipilih
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
