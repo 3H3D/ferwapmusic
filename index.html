@@ -7,7 +7,7 @@
     <!-- Menggunakan Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts untuk kesan label profesional & elegan -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -35,9 +35,20 @@
         <!-- Menu Navigasi Desktop di Atas -->
         <nav class="hidden lg:flex items-center gap-1 text-xs md:text-sm font-medium">
             <a href="#home" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Home</a>
-            <a href="#about" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">About The Label</a>
-            <a href="#roster" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Roster</a>
-            <a href="#discography" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Discography</a>
+            
+            <!-- Dropdown: About The Label -->
+            <div class="relative group">
+                <button id="dropdown-btn" class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
+                    About The Label <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <!-- Isi Dropdown Menu -->
+                <div id="dropdown-menu" class="absolute left-0 mt-1 w-48 bg-[#161415] border border-zinc-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                    <a href="#about" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">About The Label</a>
+                    <a href="#roster" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Roster</a>
+                    <a href="#discography" class="block px-4 py-2.5 text-xs text-zinc-300 hover:text-white hover:bg-zinc-800/70 transition">Discography</a>
+                </div>
+            </div>
+
             <a href="#demo" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Demo Submission</a>
             <a href="#licensing" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition">Licensing</a>
         </nav>
@@ -51,9 +62,20 @@
     <!-- Dropdown Menu Mobile -->
     <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-16 z-40 bg-[#161415] border-b border-zinc-800 p-4 space-y-1 text-sm font-medium shadow-2xl">
         <a href="#home" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Home</a>
-        <a href="#about" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">About The Label</a>
-        <a href="#roster" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Roster</a>
-        <a href="#discography" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Discography</a>
+        
+        <!-- Mobile Accordion About -->
+        <div>
+            <button id="mobile-dropdown-btn" class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition text-left">
+                <span>About The Label</span>
+                <i id="mobile-chevron" class="fa-solid fa-chevron-down text-xs transition-transform"></i>
+            </button>
+            <div id="mobile-dropdown-content" class="hidden pl-4 space-y-1 mt-1 border-l border-zinc-800 ml-4">
+                <a href="#about" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">Overview</a>
+                <a href="#roster" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">Roster</a>
+                <a href="#discography" class="mobile-link block px-4 py-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800/60 text-xs transition">Discography</a>
+            </div>
+        </div>
+
         <a href="#demo" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Demo Submission</a>
         <a href="#licensing" class="mobile-link block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Licensing</a>
         <div class="pt-3 border-t border-zinc-800 space-y-1">
@@ -195,19 +217,30 @@
         <p>&copy; 2026 Ferwap Music. All Rights Reserved. &bull; <a href="#privacy" class="underline hover:text-white">Privacy Policy</a> &bull; <a href="#terms" class="underline hover:text-white">Terms Of Service</a></p>
     </footer>
 
-    <!-- Script JavaScript Mobile Toggle -->
+    <!-- Script JavaScript -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+        const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
+        const mobileChevron = document.getElementById('mobile-chevron');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+        mobileDropdownBtn.addEventListener('click', () => {
+            mobileDropdownContent.classList.toggle('hidden');
+            mobileChevron.classList.toggle('rotate-180');
+        });
+
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mobileDropdownContent.classList.add('hidden');
+                mobileChevron.classList.remove('rotate-180');
             });
         });
     </script>
