@@ -42,7 +42,7 @@
         <nav class="hidden lg:flex items-center gap-1 text-xs md:text-sm font-medium">
             <button onclick="showPage('home')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Home</button>
             
-            <!-- Dropdown: About The Label, Roster, Discography -->
+            <!-- Dropdown: About The Label, Roster, Discography (Disembunyikan dari Home dan berdiri sendiri) -->
             <div class="relative group">
                 <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
                     About The Label <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <!-- Tombol Navigasi Lainnya -->
+            <!-- Tombol Navigasi Lainnya (Mengarah langsung ke bagian di dalam Home) -->
             <button onclick="scrollToSection('home-demo')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Demo Submission</button>
             <button onclick="scrollToSection('home-licensing')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Licensing</button>
 
@@ -113,7 +113,7 @@
     <!-- KONTEN UTAMA -->
     <main class="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
         
-        <!-- SECTION: HOME -->
+        <!-- SECTION: HOME (Berisi semua baris konten ke bawah secara default) -->
         <section id="home" class="page-section active space-y-16">
             
             <!-- Hero / Header Utama -->
@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Demo Submission -->
+            <!-- Baris ke Bawah 1: Demo Submission -->
             <div id="home-demo" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">A&R Submissions</span>
@@ -151,17 +151,26 @@
                     </p>
                     <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">Submission Guidelines:</h3>
                     <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Format:</strong> We only accept private streaming links (SoundCloud, Google Drive, or Dropbox). Please do not attach raw MP3/WAV files directly via email.</li>
-                        <li><strong>Track Selection:</strong> Send 2 to 3 of your best unreleased tracks. Make sure your audio links are accessible.</li>
+                        <li><strong>Format:</strong> We only accept private streaming links (SoundCloud, Google Drive, or Dropbox). Please do not attach raw MP3/WAV files directly via email, as those messages will be automatically filtered out.</li>
+                        <li><strong>Track Selection:</strong> Send 2 to 3 of your best unreleased tracks. Make sure your audio links are set to accessible permissions (with stream enabled).</li>
                         <li><strong>Metadata & Info:</strong> Include your official artist name, a short biography, active social media links, and clear contact information.</li>
                     </ul>
+                    <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">What We Look For:</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Originality and a strong artistic identity.</li>
+                        <li>Solid songwriting, production potential, and high-quality arrangements.</li>
+                        <li>Dedication to long-term catalog development and strategic collaboration.</li>
+                    </ul>
+                    <p class="pt-2">
+                        Due to the high volume of submissions, our A&R team manually reviews every entry. If your music fits our upcoming projects or roster strategy, we will reach out to you within 2–3 weeks.
+                    </p>
                 </div>
                 <div class="pt-4">
                     <a href="mailto:ferwapmusic.info@gmail.com" class="inline-block bg-white text-zinc-950 font-bold px-8 py-3.5 rounded-xl text-xs uppercase tracking-widest hover:bg-zinc-200 transition">Submit Demo Here</a>
                 </div>
             </div>
 
-            <!-- Music Licensing -->
+            <!-- Baris ke Bawah 2: Music Licensing -->
             <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Commercial Services</span>
@@ -169,50 +178,83 @@
                 </div>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
                     <p>
-                        Ferwap Music Entertainment manages an independent catalog of original recordings and compositions tailored for sync licensing across worldwide media platforms.
+                        Ferwap Music Entertainment manages an independent catalog of original recordings and compositions tailored for sync licensing across worldwide media platforms. We partner with content creators, film directors, game developers, advertising agencies, and production houses seeking unique audio branding and background scores.
+                    </p>
+                    <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">Our Licensing Services:</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Synchronization Rights:</strong> Master and publishing clearance for film, television, documentaries, video games, and commercial advertisements.</li>
+                        <li><strong>Custom Audio Production:</strong> Original sound design, mix engineering, and bespoke track production customized to meet project-specific briefs.</li>
+                        <li><strong>Digital Media & Branded Content:</strong> Pre-cleared music assets for digital campaigns, social media content, and corporate videos.</li>
+                    </ul>
+                    <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">How to Request a License:</h3>
+                    <p>To request a master and publishing license for any track in our catalog, please provide the following details in your inquiry:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Project title and brief description (e.g., commercial, short film, game).</li>
+                        <li>Specific track title(s) requested.</li>
+                        <li>Media format and distribution territory (e.g., Worldwide, North America, Online/Social Media).</li>
+                        <li>Term/Duration of the license and your estimated budget.</li>
+                    </ul>
+                    <p class="pt-2">
+                        For all licensing inquiries, master clearance requests, or custom audio production briefs, please contact our rights management team directly at <a href="mailto:ferwapmusic.info@gmail.com" class="underline text-white font-medium">licensing@ferwapmusic.com</a>.
                     </p>
                 </div>
             </div>
 
-            <!-- All Rights Reserved -->
+            <!-- Baris ke Bawah 3: All Rights Reserved -->
             <div id="home-rights" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">All Rights Reserved</h2>
                 </div>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
                     <p>
-                        All content contained within this website is the exclusive property of Ferwap Music Entertainment or its licensors and is protected by applicable copyright laws.
+                        All content contained within this website—including but not limited to audio recordings, musical compositions, visual artwork, logos, graphics, sound samples, text, and overall web design—is the exclusive property of Ferwap Music Entertainment or its licensors and is protected by applicable national and international copyright and intellectual property laws.
+                    </p>
+                    <p>
+                        Any unauthorized copying, reproduction, redistribution, rebroadcasting, downloading, public performance, adaptation, or commercial and non-commercial exploitation of any material on this site without explicit prior written consent from Ferwap Music Entertainment is strictly prohibited. Violations of these intellectual property rights will be subject to appropriate legal action.
                     </p>
                 </div>
             </div>
 
-            <!-- Privacy Policy -->
+            <!-- Baris ke Bawah 4: Privacy Policy -->
             <div id="home-privacy" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">Privacy Policy</h2>
                 </div>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
                     <p>
-                        Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists.
+                        Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists. This Privacy Policy outlines how we collect, use, and safeguard your information:
                     </p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Data Collection:</strong> We collect personal information that you voluntarily provide when completing demo submission forms, subscribing to our newsletter, or reaching out via our contact channels. This data may include your full name, email address, portfolio/music links, and contact details.</li>
+                        <li><strong>Use of Information:</strong> Collected information is used strictly for professional communication, A&R demo evaluations, audio licensing processing, service updates, and improving overall user experience on our platform.</li>
+                        <li><strong>Data Security & Protection:</strong> We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, disclosure, alteration, or destruction. We do not sell, rent, or trade your personal information to third parties without your explicit consent, unless required by law.</li>
+                        <li><strong>User Rights:</strong> You reserve the right to request access to, correction of, or deletion of your personal data stored in our systems at any time by contacting our support team through our official channels.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Terms of Service -->
+            <!-- Baris ke Bawah 5: Terms of Service -->
             <div id="home-terms" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">Terms of Service</h2>
                 </div>
                 <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
                     <p>
-                        Welcome to the official website of Ferwap Music Entertainment. By accessing and using this website, you agree to be bound by the following Terms of Service.
+                        Welcome to the official website of Ferwap Music Entertainment. By accessing and using this website, you acknowledge that you have read, understood, and agreed to be bound by the following Terms of Service:
                     </p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Site Usage:</strong> You agree to use this site solely for lawful purposes and in a manner that does not infringe upon the rights of, or restrict or inhibit the use and enjoyment of this site by, any third party.</li>
+                        <li><strong>Demo Submissions:</strong> Submitting music tracks, demo materials, or audio proposals through this website does not automatically establish a contractual relationship, financial obligation, or publishing commitment on behalf of Ferwap Music Entertainment. We reserve the right to review or decline any submitted material at our sole discretion.</li>
+                        <li><strong>Third-Party Links:</strong> This site may contain links to external platforms, including music streaming services (Spotify, SoundCloud, YouTube) and social media channels. Ferwap Music Entertainment assumes no responsibility for the content, privacy policies, or practices of any third-party sites.</li>
+                        <li><strong>Limitation of Liability:</strong> While Ferwap Music Entertainment strives to ensure all information on this site is accurate and up to date, we do not guarantee uninterrupted, error-free, or virus-free operation. Your use of this website is entirely at your own risk.</li>
+                        <li><strong>Modifications to Terms:</strong> We reserve the right to update or modify these Terms of Service at any time without prior notice. Any changes will become effective immediately upon being posted on this page.</li>
+                    </ul>
                 </div>
             </div>
 
         </section>
 
-        <!-- SECTION: ABOUT THE LABEL -->
+        <!-- SECTION: ABOUT THE LABEL (Disembunyikan, hanya muncul saat diklik dari menu) -->
         <section id="about" class="page-section space-y-6">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
@@ -220,12 +262,18 @@
             </div>
             <div class="space-y-5 text-sm md:text-base text-zinc-300 leading-relaxed font-light">
                 <p>
-                    Ferwap Music Entertainment is an independent record label, creative hub, and audio production house dedicated to empowering visionary music creators, audio engineers, and recording artists.
+                    Ferwap Music Entertainment is an independent record label, creative hub, and audio production house dedicated to empowering visionary music creators, audio engineers, and recording artists. Built on a foundation of creative independence and artistic integrity, we focus on long-term catalog development, audio engineering excellence, and strategic global distribution.
+                </p>
+                <p>
+                    As a modern music entity, Ferwap Music Entertainment bridges the gap between raw independent talent and global digital platforms. We provide complete end-to-end support for our roster—ranging from original composition, vocal tracking, and advanced mixing/mastering to copyright administration, digital asset protection, and multi-platform promotional campaigns.
+                </p>
+                <p>
+                    Our mission is to foster meaningful collaborations among independent producers, songwriters, and vocalists while curating a distinct sound identity across diverse contemporary genres. By leveraging innovative production workflows and modern digital infrastructure, Ferwap Music Entertainment ensures that every project reaches its full creative potential and finds its rightful audience worldwide.
                 </p>
             </div>
         </section>
 
-        <!-- SECTION: ROSTER -->
+        <!-- SECTION: ROSTER (Halaman Khusus Artis Label) -->
         <section id="roster" class="page-section space-y-8">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Our Talent</span>
@@ -270,7 +318,7 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY -->
+        <!-- SECTION: DISCOGRAPHY (Disembunyikan, hanya muncul saat diklik dari menu) -->
         <section id="discography" class="page-section space-y-6">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Catalog</span>
@@ -341,10 +389,12 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Fungsi Auto-Scroll ke Bagian Tertentu di Halaman Home
+        // Fungsi Auto-Scroll ke Bagian Tertentu di Halaman Home (Demo, Licensing, Legal, dll)
         function scrollToSection(elementId) {
+            // Pastikan kita sedang berada di halaman Home
             showPage('home');
             
+            // Beri sedikit jeda agar DOM ter-render lalu lakukan smooth scroll ke bagian tersebut
             setTimeout(() => {
                 const targetElement = document.getElementById(elementId);
                 if (targetElement) {
