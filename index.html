@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferwap Music Entertainment | Independent Record Label</title>
-    <!-- Menggunakan Tailwind CSS -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -26,10 +26,10 @@
 </head>
 <body class="bg-[#0b0b0c] text-zinc-100 min-h-screen selection:bg-zinc-700 selection:text-white flex flex-col justify-between">
 
-    <!-- NAVBAR ATAS (HEADER HORIZONTAL PROFESIONAL) -->
+    <!-- TOP NAVBAR (PROFESSIONAL HORIZONTAL HEADER) -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0b0c]/90 border-b border-zinc-800/80 backdrop-blur-md px-6 md:px-12 py-4 flex items-center justify-between">
         
-        <!-- Logo Brand -->
+        <!-- Brand Logo -->
         <button onclick="showPage('home')" class="flex items-center gap-3 text-left focus:outline-none">
             <div class="w-9 h-9 bg-zinc-900 rounded-xl flex items-center justify-center font-bold text-white border border-zinc-700 shadow-inner">W</div>
             <div>
@@ -38,11 +38,11 @@
             </div>
         </button>
 
-        <!-- Menu Navigasi Desktop di Atas -->
+        <!-- Desktop Navigation Menu -->
         <nav class="hidden lg:flex items-center gap-1 text-xs md:text-sm font-medium">
             <button onclick="showPage('home')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Home</button>
             
-            <!-- Dropdown: About The Label, Roster, Discography (Disembunyikan dari Home dan berdiri sendiri) -->
+            <!-- Dropdown: About The Label, Roster, Discography -->
             <div class="relative group">
                 <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">
                     About The Label <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <!-- Tombol Navigasi Lainnya (Mengarah langsung ke bagian di dalam Home) -->
+            <!-- Other Navigation Buttons -->
             <button onclick="scrollToSection('home-demo')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Demo Submission</button>
             <button onclick="scrollToSection('home-licensing')" class="px-3.5 py-2 rounded-lg text-zinc-300 hover:text-white hover:bg-zinc-800/50 transition focus:outline-none">Licensing</button>
 
@@ -71,13 +71,13 @@
             </div>
         </nav>
 
-        <!-- Tombol Menu Mobile -->
+        <!-- Mobile Menu Button -->
         <button id="menu-btn" class="lg:hidden text-zinc-300 hover:text-white focus:outline-none text-xl p-2">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
 
-    <!-- Dropdown Menu Mobile -->
+    <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-16 z-40 bg-[#161415] border-b border-zinc-800 p-4 space-y-1 text-sm font-medium shadow-2xl">
         <button onclick="showPage('home')" class="mobile-link w-full text-left block px-4 py-2.5 rounded-lg text-zinc-300 hover:bg-zinc-800/60 transition">Home</button>
         
@@ -110,13 +110,13 @@
     </div>
 
 
-    <!-- KONTEN UTAMA -->
+    <!-- MAIN CONTENT -->
     <main class="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
         
-        <!-- SECTION: HOME (Berisi semua baris konten ke bawah secara default) -->
+        <!-- SECTION: HOME -->
         <section id="home" class="page-section active space-y-16">
             
-            <!-- Hero / Header Utama -->
+            <!-- Hero / Main Header -->
             <div class="text-center space-y-6">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
                     EST. 2026
@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Baris ke Bawah 1: Demo Submission -->
+            <!-- Section 1: Demo Submission -->
             <div id="home-demo" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">A&R Submissions</span>
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <!-- Baris ke Bawah 2: Music Licensing -->
+            <!-- Section 2: Music Licensing -->
             <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Commercial Services</span>
@@ -200,7 +200,7 @@
                 </div>
             </div>
 
-            <!-- Baris ke Bawah 3: All Rights Reserved -->
+            <!-- Section 3: All Rights Reserved -->
             <div id="home-rights" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">All Rights Reserved</h2>
@@ -215,7 +215,7 @@
                 </div>
             </div>
 
-            <!-- Baris ke Bawah 4: Privacy Policy -->
+            <!-- Section 4: Privacy Policy -->
             <div id="home-privacy" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">Privacy Policy</h2>
@@ -233,7 +233,7 @@
                 </div>
             </div>
 
-            <!-- Baris ke Bawah 5: Terms of Service -->
+            <!-- Section 5: Terms of Service -->
             <div id="home-terms" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
                 <div class="border-b border-zinc-900 pb-4">
                     <h2 class="text-2xl font-bold text-white">Terms of Service</h2>
@@ -254,7 +254,7 @@
 
         </section>
 
-        <!-- SECTION: ABOUT THE LABEL (Disembunyikan, hanya muncul saat diklik dari menu) -->
+        <!-- SECTION: ABOUT THE LABEL -->
         <section id="about" class="page-section space-y-6">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
@@ -273,15 +273,15 @@
             </div>
         </section>
 
-        <!-- SECTION: ROSTER (Halaman Khusus Artis Label) -->
+        <!-- SECTION: ROSTER -->
         <section id="roster" class="page-section space-y-8">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Our Talent</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Artist Roster</h2>
-                <p class="text-zinc-400 text-sm font-light mt-1">Daftar talenta dan musisi independen yang bernaung di bawah Ferwap Music Entertainment.</p>
+                <p class="text-zinc-400 text-sm font-light mt-1">Discover the talented independent artists signed to Ferwap Music Entertainment.</p>
             </div>
 
-            <!-- Grid Kartu Artis -->
+            <!-- Artist Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Artist 1: 3H3D -->
                 <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 space-y-4 hover:border-zinc-700 transition">
@@ -318,37 +318,53 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY (Katalog Rilisan Label) -->
+        <!-- SECTION: DISCOGRAPHY -->
         <section id="discography" class="page-section space-y-8">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Catalog</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Discography</h2>
-                <p class="text-zinc-400 text-sm font-light mt-1">Koleksi rilisan album, single, dan karya audio produksi pilihan dari roster kreatif kami.</p>
+                <p class="text-zinc-400 text-sm font-light mt-1">Explore our official releases, singles, and curated audio productions from our creative roster.</p>
             </div>
 
-            <!-- Grid Rilis Musik / Diskografi -->
+            <!-- Music Releases Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Release 1 -->
                 <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 flex gap-4 items-center hover:border-zinc-700 transition">
-                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 flex items-center justify-center border border-zinc-800 text-zinc-600">
-                        <i class="fa-solid fa-compact-disc text-2xl text-zinc-500"></i>
+                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-600">
+                        <img src="3H3D.jpeg" alt="Cover" class="w-full h-full object-cover">
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">Single &bull; 2026</span>
+                    <div class="space-y-1 w-full">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">3H3D &bull; Single (2026)</span>
                         <h3 class="text-base font-bold text-white">Latest Release</h3>
-                        <p class="text-xs text-zinc-400 font-light">Koleksi single terbaru dari artist roster Ferwap Music Entertainment yang tersedia di berbagai platform digital.</p>
+                        <p class="text-xs text-zinc-400 font-light">Explore the latest single release from our artist roster, available across all major digital streaming platforms.</p>
+                        <div class="pt-2 flex gap-3 text-xs">
+                            <a href="https://open.spotify.com/artist/3sLx6EAfPBhJwNtoyWcG4c" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                                <i class="fa-brands fa-spotify"></i> Spotify
+                            </a>
+                            <a href="https://www.youtube.com/@3h3dofficial" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Release 2 -->
                 <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 flex gap-4 items-center hover:border-zinc-700 transition">
-                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 flex items-center justify-center border border-zinc-800 text-zinc-600">
-                        <i class="fa-solid fa-music text-2xl text-zinc-500"></i>
+                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-600">
+                        <img src="ANDER.jpg" alt="Cover" class="w-full h-full object-cover">
                     </div>
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">Independent Catalog &bull; 2026</span>
+                    <div class="space-y-1 w-full">
+                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">ANDER &bull; Single (2026)</span>
                         <h3 class="text-base font-bold text-white">Archived Works</h3>
-                        <p class="text-xs text-zinc-400 font-light">Eksplorasi karya produksi audio dan kolaborasi independen yang dikelola di bawah lisensi resmi label.</p>
+                        <p class="text-xs text-zinc-400 font-light">Explore independent audio production works and collaborative projects managed under official label license.</p>
+                        <div class="pt-2 flex gap-3 text-xs">
+                            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                                <i class="fa-brands fa-spotify"></i> Spotify
+                            </a>
+                            <a href="https://www.youtube.com" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -356,7 +372,7 @@
 
     </main>
 
-    <!-- FOOTER BAWAH -->
+    <!-- FOOTER -->
     <footer class="bg-[#0b0b0c] border-t border-zinc-900 py-8 text-center text-xs text-zinc-400 space-y-4">
         <div class="flex justify-center gap-6 text-lg text-zinc-400">
             <a href="https://www.facebook.com/ferwapmusic" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
@@ -366,7 +382,7 @@
         <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. &bull; <button onclick="scrollToSection('home-privacy')" class="underline hover:text-white focus:outline-none">Privacy Policy</button> &bull; <button onclick="scrollToSection('home-terms')" class="underline hover:text-white focus:outline-none">Terms Of Service</button></p>
     </footer>
 
-    <!-- Script JavaScript -->
+    <!-- JavaScript -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -393,7 +409,6 @@
             mobileLegalChevron.classList.toggle('rotate-180');
         });
 
-        // Fungsi Membuka Halaman Khusus (About, Roster, Discography)
         function showPage(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
@@ -414,12 +429,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Fungsi Auto-Scroll ke Bagian Tertentu di Halaman Home (Demo, Licensing, Legal, dll)
         function scrollToSection(elementId) {
-            // Pastikan kita sedang berada di halaman Home
             showPage('home');
-            
-            // Beri sedikit jeda agar DOM ter-render lalu lakukan smooth scroll ke bagian tersebut
             setTimeout(() => {
                 const targetElement = document.getElementById(elementId);
                 if (targetElement) {
