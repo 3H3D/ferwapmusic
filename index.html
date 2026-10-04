@@ -439,6 +439,113 @@
             }, 50);
         }
     </script>
+    <!-- ========================================== -->
+<!-- FERWAP MUSIC COOKIE SETTINGS (COMPACT & TOGGLE) -->
+<!-- ========================================== -->
 
+<!-- Tombol Kecil untuk Membuka Kembali Cookie Settings -->
+<button id="open-cookie-btn" onclick="openCookieModal()" style="display: none; position: fixed; bottom: 20px; left: 20px; background-color: #1a1a1a; color: #fff; border: 1px solid #333; padding: 8px 14px; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; border-radius: 4px; cursor: pointer; z-index: 9998; box-shadow: 0 4px 12px rgba(0,0,0,0.5); letter-spacing: 0.5px;">
+    Cookie Settings
+</button>
+
+<!-- Pop-up Modal Cookie (Lebih Rapat / Compact) -->
+<div id="ferwap-cookie-modal" style="position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.85); z-index: 99999; display: flex; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 12px;">
+    <div style="background-color: #141414; color: #e5e5e5; width: 100%; max-width: 540px; border-radius: 6px; border: 1px solid #2a2a2a; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);">
+        
+        <!-- Header (Rapat) -->
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid #222;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="background: white; color: black; font-weight: bold; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px;">F</div>
+                <span style="font-weight: 700; letter-spacing: 0.8px; font-size: 12px; color: #fff;">FERWAP MUSIC</span>
+            </div>
+            <button onclick="closeCookieModal()" style="background: none; border: none; color: #777; font-size: 18px; cursor: pointer; padding: 2px 6px; line-height: 1;">&times;</button>
+        </div>
+
+        <!-- Body Content (Padding Lebih Kecil / Rapat) -->
+        <div style="padding: 16px 18px; max-height: 55vh; overflow-y: auto; font-size: 12px; line-height: 1.5; color: #aaa;">
+            <h2 style="color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 8px;">Cookie Settings</h2>
+            <p style="margin-bottom: 10px;">
+                When you visit our website, we store cookies on your browser to collect information regarding your preferences or device to make the site work and provide a personalized experience.
+            </p>
+            <p style="margin-bottom: 12px;">
+                Strictly Necessary Cookies ensure the proper functioning of our website. For details, see our <a href="#" style="color: #ff4d4d; text-decoration: underline;">Privacy Policy</a>.
+            </p>
+
+            <h3 style="color: #fff; font-size: 12px; font-weight: 600; margin-bottom: 10px; border-top: 1px solid #222; padding-top: 10px;">Manage Consent Preferences</h3>
+
+            <!-- Option 1: Strictly Necessary -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222;">
+                <span style="color: #fff; font-weight: 500;">+ Strictly Necessary Cookies</span>
+                <span style="color: #777; font-size: 11px;">Always Active</span>
+            </div>
+
+            <!-- Option 2: Functional -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222;">
+                <span style="color: #fff; font-weight: 500;">+ Functional Cookies</span>
+                <label style="position: relative; display: inline-block; width: 36px; height: 20px; cursor: pointer;">
+                    <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                    <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #22c55e; transition: .2s; border-radius: 20px;"></span>
+                    <span style="position: absolute; content: ''; height: 14px; width: 14px; left: 19px; bottom: 3px; background-color: white; transition: .2s; border-radius: 50%;"></span>
+                </label>
+            </div>
+
+            <!-- Option 3: Advertising -->
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 0;">
+                <span style="color: #fff; font-weight: 500;">+ Sale of Sharing/Targeted Advertising</span>
+                <label style="position: relative; display: inline-block; width: 36px; height: 20px; cursor: pointer;">
+                    <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                    <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #22c55e; transition: .2s; border-radius: 20px;"></span>
+                    <span style="position: absolute; content: ''; height: 14px; width: 14px; left: 19px; bottom: 3px; background-color: white; transition: .2s; border-radius: 50%;"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Footer / Confirm Button -->
+        <div style="padding: 12px 18px; background-color: #0f0f0f; border-top: 1px solid #222;">
+            <button onclick="closeCookieModal()" style="background-color: #fff; color: #000; border: none; padding: 8px 16px; font-weight: 600; font-size: 12px; border-radius: 4px; cursor: pointer; width: 100%;">Confirm My Choices</button>
+        </div>
+        
+        <!-- Powered By -->
+        <div style="text-align: right; padding: 4px 12px; font-size: 9px; color: #555; background-color: #0a0a0a;">
+            Powered by Ferwap Music
+        </div>
+    </div>
+</div>
+
+<script>
+function closeCookieModal() {
+    const modal = document.getElementById('ferwap-cookie-modal');
+    const openBtn = document.getElementById('open-cookie-btn');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+    if (openBtn) {
+        openBtn.style.display = 'block'; // Tampilkan tombol kecil di pojok saat pop-up ditutup
+    }
+    localStorage.setItem('ferwap_cookie_accepted', 'true');
+}
+
+function openCookieModal() {
+    const modal = document.getElementById('ferwap-cookie-modal');
+    const openBtn = document.getElementById('open-cookie-btn');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+    if (openBtn) {
+        openBtn.style.display = 'none'; // Sembunyikan tombol kecil saat pop-up terbuka
+    }
+}
+
+// Cek status saat halaman dimuat
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('ferwap_cookie_accepted') === 'true') {
+        const modal = document.getElementById('ferwap-cookie-modal');
+        const openBtn = document.getElementById('open-cookie-btn');
+        if (modal) modal.style.display = 'none';
+        if (openBtn) openBtn.style.display = 'block';
+    }
+});
+</script>
+<!-- ========================================== -->
 </body>
 </html>
