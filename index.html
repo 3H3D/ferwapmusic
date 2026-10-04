@@ -440,12 +440,20 @@
         }
     </script>
     <!-- ========================================== -->
-<!-- KODE TOMBOL MELAYANG COOKIE & PRIVACY POLICY -->
+<!-- KODE TOMBOL MELAYANG COOKIE & PRIVACY POLICY (DI KIRI) -->
 <!-- ========================================== -->
 
 <!-- 1. Tombol Ikon Cookie Melayang di Kanan Bawah -->
 <a href="javascript:void(0);" id="openPrivacyModal" class="floating-cookie-btn" title="Ferwap Music Privacy Policy">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90byBJUG90ICYgU3R1ZGlvIDkuMI+50oUAAAAJcEhZcwAAAsTAAALEwEAmpwYAAACx0lEQVR4nO2Y3W3DMAxF30oR7d6q7LqL7LqL7JolqLqL7aLd1R3uM0CBAH2QonA8Dq5+fC3hT6Gg+PH8zOdvL9Pj+Xq8z4fH8Xqev38e3/P8cPlcf1zO87/G+e8zH30c14vP1+N5fnxOr7vx81Pz/nS37z3d3qL/pG97qf4M7Xp5/Lh/nL8sD1n7uKrfvPzP5/P+Pj3fD3u7/Px+TgfP6/n5+N5fl4X78vj8zw/nuvj5+M4X92n+7FveJsfL7Xz+Tjfn9v1/DzvZ8318XyfP37vH7/jdf/e4Hh8eJvv6zM/j838PH1v78vnx/Z6Pr5fP37fPz8H/z3O7+/T+f/4vX4n57rN+5vP39P3fD4e58fn/Xz8n7f3z8f+53n+59P18+n5249f/d/v57fv18//+3x/eD2+Hqef3+f5+T0fn68fB9r8P71z78fj/PZ8Pn6435+b58fhf/j9XvP48fnj/b7fv32+n/8M758/P4/P47N6fm6b72+/f/7xP86/P+7L8/L5fN7878vz8vE+P54ff1+T83P/vE9v4/N8/v58PZ6ff3+n76/f5+fnw/N/fP1+359//+fn8/w8P87n9/3f3/3v+5/nf3b67/ff8z8Xf//PZ7P75Pefz99vP5/b7/c5L98fP59b58f69v/h2v/v34//h2b79P75wfn2/Pz+n59/b7v32s9//N+9v//z8f8//9+vn//3v19//z/v89//+P8//n3P//+b/9+//f/f/+f7//37v9f/v/r9////v/v9f/b//3f/fv9f/f/+f//58f//wL7369uA0o20AAAABJRU5ErkJggg==" alt="Cookie Icon">
+    <!-- Ikon SVG Cookie -->
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 1 0 7.54 16.63 8 8 0 0 1-7.54-16.63z"></path>
+        <circle cx="8.5" cy="8.5" r="1"></circle>
+        <circle cx="15.5" cy="11.5" r="1.2"></circle>
+        <circle cx="10" cy="15" r="1"></circle>
+        <circle cx="14" cy="16" r="0.8"></circle>
+        <circle cx="13" cy="7" r="0.8"></circle>
+    </svg>
 </a>
 
 <!-- 2. Kotak Pop-up (Modal) Berisi Teks Kebijakan Privasi -->
@@ -477,12 +485,12 @@
     </div>
 </div>
 
-<!-- 3. CSS Styling untuk Tombol Melayang -->
+<!-- 3. CSS Styling untuk Tombol Melayang di Kiri -->
 <style>
     .floating-cookie-btn {
         position: fixed;
         bottom: 30px;
-        right: 30px;
+        left: 30px; /* DIPINDAH KE KIRI: Menggunakan left alih-alih right */
         z-index: 9998;
         
         width: 60px;
@@ -494,17 +502,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #ffffff;
         
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
         text-decoration: none;
         cursor: pointer;
-    }
-
-    .floating-cookie-btn img {
-        width: 32px;
-        height: 32px;
-        object-fit: contain;
     }
 
     .floating-cookie-btn:hover {
@@ -516,13 +519,11 @@
     @media screen and (max-width: 600px) {
         .floating-cookie-btn {
             bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+            left: 20px; /* Menyesuaikan untuk perangkat mobile di kiri */
         }
-        .floating-cookie-btn img {
-            width: 26px;
-            height: 26px;
+        .floating-cookie-btn svg {
+            width: 24px;
+            height: 24px;
         }
     }
 </style>
@@ -534,7 +535,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("openPrivacyModal");
     const span = document.getElementById("closePrivacyModal");
 
-    // Ketika ikon cookie diklik, tampilkan modal pop-up
     if (btn) {
         btn.onclick = function(e) {
             e.preventDefault();
@@ -542,14 +542,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Ketika tombol 'X' diklik, tutup modal
     if (span) {
         span.onclick = function() {
             modal.style.display = "none";
         }
     }
 
-    // Ketika area di luar kotak modal diklik, tutup modal
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
