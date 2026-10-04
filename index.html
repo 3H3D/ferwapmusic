@@ -439,18 +439,14 @@
             }, 50);
         }
     </script>
-   <!-- ========================================== -->
-<!-- KODE TOMBOL COOKIE MELAYANG (GAYA SEPERTI CONTOH) -->
+  <!-- ========================================== -->
+<!-- KODE TOMBOL & PANEL PENGATURAN COOKIE FERWAP MUSIC -->
 <!-- ========================================== -->
 
-<!-- 1. Tombol Ikon Cookie Menggunakan Foto Anda Sendiri -->
-<a href="javascript:void(0);" id="openPrivacyModal" class="floating-cookie-btn" title="Ferwap Music Privacy Policy">
-    <!-- Ganti 'foto-saya.jpg' dengan nama file foto Anda di GitHub -->
-    <img src="Cokiee.jpg" alt="Cokiee.jpg" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-</a>
-        <!-- Bentuk Dasar Cookie dengan Gigitan -->
+<!-- 1. Tombol Ikon Cookie Melayang di Pojok Kiri Bawah -->
+<a href="javascript:void(0);" id="openPrivacyModal" class="floating-cookie-btn" title="Ferwap Music Cookie Settings">
+    <svg viewBox="0 0 100 100" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M50 10C27.9 10 10 27.9 10 50s17.9 40 40 40 40-17.9 40-40c0-4-.6-7.9-1.7-11.6-1.5 1.1-3.3 1.8-5.3 1.8-5 0-9-4-9-9 0-2 .7-3.8 1.8-5.3C71.9 19.4 61.5 10 50 10z"/>
-        <!-- Chocochips / Titik-titik di dalam cookie -->
         <circle cx="35" cy="35" r="4" fill="#ffffff"/>
         <circle cx="65" cy="45" r="5" fill="#ffffff"/>
         <circle cx="45" cy="65" r="4.5" fill="#ffffff"/>
@@ -460,85 +456,169 @@
     </svg>
 </a>
 
-<!-- 2. Kotak Pop-up (Modal) Berisi Teks Kebijakan Privasi -->
-<div id="privacyModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);">
-    <div style="background-color: #181818; margin: 8% auto; padding: 30px; width: 85%; max-width: 650px; border-radius: 12px; color: #fff; max-height: 75vh; overflow-y: auto; position: relative; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+<!-- 2. Kotak Panel Pengaturan Cookie (Modal ala OneTrust) -->
+<div id="privacyModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.75);">
+    <div style="background-color: #121212; margin: 5% auto; width: 90%; max-width: 680px; border-radius: 10px; color: #fff; max-height: 85vh; overflow-y: auto; position: relative; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.8); font-family: sans-serif;">
         
-        <!-- Tombol Tutup (X) -->
-        <span id="closePrivacyModal" style="color: #aaa; float: right; font-size: 32px; font-weight: bold; cursor: pointer; line-height: 20px;">&times;</span>
+        <!-- Header Panel dengan Judul Ferwap Music & Tombol Tutup (X) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 25px; border-bottom: 1px solid #282828;">
+            <span style="font-weight: bold; font-size: 14px; letter-spacing: 1px; color: #aaa;">FERWAP MUSIC</span>
+            <span id="closePrivacyModal" style="color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 15px;">&times;</span>
+        </div>
         
-        <!-- Konten Kebijakan Privasi Ferwap Music -->
-        <h2 style="margin-top: 0; color: #1db954; font-size: 22px;">Ferwap Music Entertainment</h2>
-        <h3 style="color: #fff; margin-bottom: 20px; font-size: 16px; border-bottom: 1px solid #333; padding-bottom: 10px;">Privacy Policy & Cookie Information</h3>
-        
-        <!-- Section 4: Privacy Policy -->
-            <div id="home-privacy" class="space-y-6 text-sm md:text-base pt-10 border-t border-zinc-900">
-                <div class="border-b border-zinc-900 pb-4">
-                    <h2 class="text-2xl font-bold text-white">Privacy Policy</h2>
+        <!-- Konten Pengaturan Cookie -->
+        <div style="padding: 25px;">
+            <h2 style="margin-top: 0; color: #ffffff; font-size: 22px; margin-bottom: 15px;">Cookie Settings</h2>
+            
+            <p style="font-size: 13px; line-height: 1.6; color: #b3b3b3; margin-bottom: 25px;">
+                When you visit our website, we store cookies on your browser to collect information. The information collected might relate to you, your preferences or your device, and is mostly used to make the site work as you expect it to and to provide a more personalized web experience. You can choose not to allow certain types of cookies, which may impact your experience of the site and the services we are able to offer. For more information, please see our <a href="javascript:void(0);" style="color: #1db954; text-decoration: underline;">Privacy Policy</a>.
+            </p>
+            
+            <h3 style="color: #fff; font-size: 15px; margin-bottom: 15px; font-weight: bold;">Manage Consent Preferences</h3>
+            
+            <!-- Opsi 1: Strictly Necessary (Selalu Aktif) -->
+            <div style="background-color: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 15px 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong style="font-size: 14px; color: #fff; display: block; margin-bottom: 3px;">+ Strictly Necessary Cookies</strong>
+                    <span style="font-size: 12px; color: #888;">Essential cookies required for core website functionality.</span>
                 </div>
-                <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
-                    <p>
-                        Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists. This Privacy Policy outlines how we collect, use, and safeguard your information:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Data Collection:</strong> We collect personal information that you voluntarily provide when completing demo submission forms, subscribing to our newsletter, or reaching out via our contact channels. This data may include your full name, email address, portfolio/music links, and contact details.</li>
-                        <li><strong>Use of Information:</strong> Collected information is used strictly for professional communication, A&R demo evaluations, audio licensing processing, service updates, and improving overall user experience on our platform.</li>
-                        <li><strong>Data Security & Protection:</strong> We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, disclosure, alteration, or destruction. We do not sell, rent, or trade your personal information to third parties without your explicit consent, unless required by law.</li>
-                        <li><strong>User Rights:</strong> You reserve the right to request access to, correction of, or deletion of your personal data stored in our systems at any time by contacting our support team through our official channels.</li>
-                    </ul>
-                </div>
+                <span style="font-size: 12px; color: #1db954; font-weight: bold; background: rgba(29,185,84,0.1); padding: 5px 10px; border-radius: 4px;">Always Active</span>
             </div>
 
-<!-- 3. CSS Styling untuk Tombol Melayang di Kiri Bawah -->
+            <!-- Opsi 2: Functional Cookies -->
+            <div style="background-color: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 15px 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong style="font-size: 14px; color: #fff; display: block; margin-bottom: 3px;">+ Functional Cookies</strong>
+                    <span style="font-size: 12px; color: #888;">Allows website to remember choices and customize features.</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Opsi 3: Targeted Advertising -->
+            <div style="background-color: #1a1a1a; border: 1px solid #333; border-radius: 6px; padding: 15px 20px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <strong style="font-size: 14px; color: #fff; display: block; margin-bottom: 3px;">+ Sale of Sharing/Targeted Advertising</strong>
+                    <span style="font-size: 12px; color: #888;">Used to deliver relevant ads and track campaign performance.</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Tombol Konfirmasi Pilihan -->
+            <button id="confirmChoicesBtn" style="background-color: #ffffff; color: #000000; border: none; padding: 12px 25px; font-weight: bold; font-size: 14px; border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.2s;">
+                Confirm My Choices
+            </button>
+        </div>
+
+        <!-- Footer Panel (Powered by) -->
+        <div style="background-color: #0d0d0d; padding: 12px 25px; text-align: right; border-top: 1px solid #222; font-size: 11px; color: #777; letter-spacing: 0.5px;">
+            Powered by <strong>FERWAP MUSIC</strong>
+        </div>
+
+    </div>
+</div>
+
+<!-- 3. CSS Styling untuk Tombol, Switch, dan Panel -->
 <style>
     .floating-cookie-btn {
         position: fixed;
         bottom: 25px;
-        left: 25px; /* Posisi di pojok kiri bawah */
+        left: 25px;
         z-index: 9998;
         
-        width: 55px;
-        height: 55px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
-        background-color: #000000; /* Warna hitam solid persis seperti contoh */
-        border: 1.5px solid rgba(255, 255, 255, 0.4); /* Garis pinggir putih tipis */
+        background-color: #000000;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
         
         display: flex;
         align-items: center;
         justify-content: center;
         
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        transition: transform 0.3s ease, border-color 0.3s ease;
         text-decoration: none;
         cursor: pointer;
     }
 
     .floating-cookie-btn:hover {
-        background-color: #1a1a1a;
-        border-color: #ffffff;
+        border-color: #1db954;
         transform: scale(1.08);
+    }
+
+    /* Style Toggle Switch */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-left: 15px;
+    }
+
+    .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #444;
+        transition: .3s;
+        border-radius: 24px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .3s;
+        border-radius: 50%;
+    }
+
+    input:checked + .slider {
+        background-color: #1db954;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+
+    #confirmChoicesBtn:hover {
+        background-color: #1db954;
+        color: #ffffff;
     }
 
     @media screen and (max-width: 600px) {
         .floating-cookie-btn {
             bottom: 15px;
             left: 15px;
-            width: 48px;
-            height: 48px;
-        }
-        .floating-cookie-btn svg {
-            width: 34px;
-            height: 34px;
+            width: 46px;
+            height: 46px;
         }
     }
 </style>
 
-<!-- 4. JavaScript untuk Membuka & Menutup Pop-up -->
+<!-- 4. JavaScript untuk Tombol Buka, Tutup, dan Konfirmasi -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("privacyModal");
     const btn = document.getElementById("openPrivacyModal");
     const span = document.getElementById("closePrivacyModal");
+    const confirmBtn = document.getElementById("confirmChoicesBtn");
 
     if (btn) {
         btn.onclick = function(e) {
@@ -549,6 +629,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (span) {
         span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    if (confirmBtn) {
+        confirmBtn.onclick = function() {
             modal.style.display = "none";
         }
     }
