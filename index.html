@@ -439,59 +439,123 @@
             }, 50);
         }
     </script>
-    <!-- 1. Teks/Tombol yang bisa diklik -->
-<p>Dengan menggunakan situs ini, Anda menyetujui <a href="javascript:void(0);" id="openPrivacyModal" style="color: #1db954; text-decoration: underline; cursor: pointer;">Privacy Policy</a> kami.</p>
+    <!-- ========================================== -->
+<!-- KODE TOMBOL MELAYANG COOKIE & PRIVACY POLICY -->
+<!-- ========================================== -->
 
-<!-- 2. Kotak Pop-up (Modal) yang awalnya tersembunyi -->
-<div id="privacyModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6);">
-    <div style="background-color: #ffffff; margin: 10% auto; padding: 25px; width: 80%; max-width: 600px; border-radius: 8px; color: #333; max-height: 70vh; overflow-y: auto; position: relative;">
+<!-- 1. Tombol Ikon Cookie Melayang di Kanan Bawah -->
+<a href="javascript:void(0);" id="openPrivacyModal" class="floating-cookie-btn" title="Ferwap Music Privacy Policy">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90byBJUG90ICYgU3R1ZGlvIDkuMI+50oUAAAAJcEhZcwAAAsTAAALEwEAmpwYAAACx0lEQVR4nO2Y3W3DMAxF30oR7d6q7LqL7LqL7JolqLqL7aLd1R3uM0CBAH2QonA8Dq5+fC3hT6Gg+PH8zOdvL9Pj+Xq8z4fH8Xqev38e3/P8cPlcf1zO87/G+e8zH30c14vP1+N5fnxOr7vx81Pz/nS37z3d3qL/pG97qf4M7Xp5/Lh/nL8sD1n7uKrfvPzP5/P+Pj3fD3u7/Px+TgfP6/n5+N5fl4X78vj8zw/nuvj5+M4X92n+7FveJsfL7Xz+Tjfn9v1/DzvZ8318XyfP37vH7/jdf/e4Hh8eJvv6zM/j838PH1v78vnx/Z6Pr5fP37fPz8H/z3O7+/T+f/4vX4n57rN+5vP39P3fD4e58fn/Xz8n7f3z8f+53n+59P18+n5249f/d/v57fv18//+3x/eD2+Hqef3+f5+T0fn68fB9r8P71z78fj/PZ8Pn6435+b58fhf/j9XvP48fnj/b7fv32+n/8M758/P4/P47N6fm6b72+/f/7xP86/P+7L8/L5fN7878vz8vE+P54ff1+T83P/vE9v4/N8/v58PZ6ff3+n76/f5+fnw/N/fP1+359//+fn8/w8P87n9/3f3/3v+5/nf3b67/ff8z8Xf//PZ7P75Pefz99vP5/b7/c5L98fP59b58f69v/h2v/v34//h2b79P75wfn2/Pz+n59/b7v32s9//N+9v//z8f8//9+vn//3v19//z/v89//+P8//n3P//+b/9+//f/f/+f7//37v9f/v/r9////v/v9f/b//3f/fv9f/f/+f//58f//wL7369uA0o20AAAABJRU5ErkJggg==" alt="Cookie Icon">
+</a>
+
+<!-- 2. Kotak Pop-up (Modal) Berisi Teks Kebijakan Privasi -->
+<div id="privacyModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);">
+    <div style="background-color: #181818; margin: 8% auto; padding: 30px; width: 85%; max-width: 650px; border-radius: 12px; color: #fff; max-height: 75vh; overflow-y: auto; position: relative; border: 1px solid #333; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
         
         <!-- Tombol Tutup (X) -->
-        <span id="closePrivacyModal" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+        <span id="closePrivacyModal" style="color: #aaa; float: right; font-size: 32px; font-weight: bold; cursor: pointer; line-height: 20px;">&times;</span>
         
-        <!-- Konten Privacy Policy Anda -->
-        <h2 style="margin-top: 0; color: #111;">Ferwap Music Entertainment - Privacy Policy</h2>
-        <p style="font-size: 14px; line-height: 1.6;">
+        <!-- Konten Kebijakan Privasi Ferwap Music -->
+        <h2 style="margin-top: 0; color: #1db954; font-size: 22px;">Ferwap Music Entertainment</h2>
+        <h3 style="color: #fff; margin-bottom: 20px; font-size: 16px; border-bottom: 1px solid #333; padding-bottom: 10px;">Privacy Policy & Cookie Information</h3>
+        
+        <p style="font-size: 14px; line-height: 1.7; color: #ccc;">
             Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists. This Privacy Policy outlines how we collect, use, and safeguard your information:
         </p>
-        <p style="font-size: 14px; line-height: 1.6;">
+        <p style="font-size: 14px; line-height: 1.7; color: #ccc;">
             <strong>Data Collection:</strong> We collect personal information that you voluntarily provide when completing demo submission forms, subscribing to our newsletter, or reaching out via our contact channels. This data may include your full name, email address, portfolio/music links, and contact details.
         </p>
-        <p style="font-size: 14px; line-height: 1.6;">
+        <p style="font-size: 14px; line-height: 1.7; color: #ccc;">
             <strong>Use of Information:</strong> Collected information is used strictly for professional communication, A&R demo evaluations, audio licensing processing, service updates, and improving overall user experience on our platform.
         </p>
-        <p style="font-size: 14px; line-height: 1.6;">
+        <p style="font-size: 14px; line-height: 1.7; color: #ccc;">
             <strong>Data Security & Protection:</strong> We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, disclosure, alteration, or destruction. We do not sell, rent, or trade your personal information to third parties without your explicit consent, unless required by law.
         </p>
-        <p style="font-size: 14px; line-height: 1.6;">
+        <p style="font-size: 14px; line-height: 1.7; color: #ccc;">
             <strong>User Rights:</strong> You reserve the right to request access to, correction of, or deletion of your personal data stored in our systems at any time by contacting our support team through our official channels.
         </p>
     </div>
 </div>
 
-<!-- 3. Skrip JavaScript untuk interaksi klik -->
-<script>
-const modal = document.getElementById("privacyModal");
-const btn = document.getElementById("openPrivacyModal");
-const span = document.getElementById("closePrivacyModal");
-
-// Ketika teks diklik, tampilkan modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// Ketika tombol 'X' diklik, tutup modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Ketika pengguna mengklik di luar area modal, tutup modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+<!-- 3. CSS Styling untuk Tombol Melayang -->
+<style>
+    .floating-cookie-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9998;
+        
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #181818;
+        border: 2px solid #1db954;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
     }
-}
-</script>
 
+    .floating-cookie-btn img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+    }
+
+    .floating-cookie-btn:hover {
+        background-color: #282828;
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
+    }
+
+    @media screen and (max-width: 600px) {
+        .floating-cookie-btn {
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+        .floating-cookie-btn img {
+            width: 26px;
+            height: 26px;
+        }
+    }
+</style>
+
+<!-- 4. JavaScript untuk Membuka & Menutup Pop-up -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("privacyModal");
+    const btn = document.getElementById("openPrivacyModal");
+    const span = document.getElementById("closePrivacyModal");
+
+    // Ketika ikon cookie diklik, tampilkan modal pop-up
+    if (btn) {
+        btn.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
+    }
+
+    // Ketika tombol 'X' diklik, tutup modal
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // Ketika area di luar kotak modal diklik, tutup modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+</script>
 </body>
 </html>
