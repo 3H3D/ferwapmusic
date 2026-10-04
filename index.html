@@ -439,20 +439,23 @@
             }, 50);
         }
     </script>
-    <!-- ========================================== -->
-<!-- KODE TOMBOL MELAYANG COOKIE & PRIVACY POLICY (DI KIRI) -->
+   <!-- ========================================== -->
+<!-- KODE TOMBOL COOKIE MELAYANG (GAYA SEPERTI CONTOH) -->
 <!-- ========================================== -->
 
-<!-- 1. Tombol Ikon Cookie Melayang di Kanan Bawah -->
+<!-- 1. Tombol Ikon Cookie Melayang di Pojok Kiri Bawah -->
 <a href="javascript:void(0);" id="openPrivacyModal" class="floating-cookie-btn" title="Ferwap Music Privacy Policy">
-    <!-- Ikon SVG Cookie -->
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2a10 10 0 1 0 7.54 16.63 8 8 0 0 1-7.54-16.63z"></path>
-        <circle cx="8.5" cy="8.5" r="1"></circle>
-        <circle cx="15.5" cy="11.5" r="1.2"></circle>
-        <circle cx="10" cy="15" r="1"></circle>
-        <circle cx="14" cy="16" r="0.8"></circle>
-        <circle cx="13" cy="7" r="0.8"></circle>
+    <!-- Ikon SVG Cookie Presisi -->
+    <svg viewBox="0 0 100 100" width="42" height="42" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Bentuk Dasar Cookie dengan Gigitan -->
+        <path d="M50 10C27.9 10 10 27.9 10 50s17.9 40 40 40 40-17.9 40-40c0-4-.6-7.9-1.7-11.6-1.5 1.1-3.3 1.8-5.3 1.8-5 0-9-4-9-9 0-2 .7-3.8 1.8-5.3C71.9 19.4 61.5 10 50 10z"/>
+        <!-- Chocochips / Titik-titik di dalam cookie -->
+        <circle cx="35" cy="35" r="4" fill="#ffffff"/>
+        <circle cx="65" cy="45" r="5" fill="#ffffff"/>
+        <circle cx="45" cy="65" r="4.5" fill="#ffffff"/>
+        <circle cx="30" cy="60" r="3" fill="#ffffff"/>
+        <circle cx="60" cy="70" r="3.5" fill="#ffffff"/>
+        <circle cx="55" cy="30" r="3" fill="#ffffff"/>
     </svg>
 </a>
 
@@ -485,45 +488,46 @@
     </div>
 </div>
 
-<!-- 3. CSS Styling untuk Tombol Melayang di Kiri -->
+<!-- 3. CSS Styling untuk Tombol Melayang di Kiri Bawah -->
 <style>
     .floating-cookie-btn {
         position: fixed;
-        bottom: 30px;
-        left: 30px; /* DIPINDAH KE KIRI: Menggunakan left alih-alih right */
+        bottom: 25px;
+        left: 25px; /* Posisi di pojok kiri bawah */
         z-index: 9998;
         
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
-        background-color: #181818;
-        border: 2px solid #1db954;
+        background-color: #000000; /* Warna hitam solid persis seperti contoh */
+        border: 1.5px solid rgba(255, 255, 255, 0.4); /* Garis pinggir putih tipis */
         
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #ffffff;
         
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
         text-decoration: none;
         cursor: pointer;
     }
 
     .floating-cookie-btn:hover {
-        background-color: #282828;
-        transform: scale(1.1);
-        box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
+        background-color: #1a1a1a;
+        border-color: #ffffff;
+        transform: scale(1.08);
     }
 
     @media screen and (max-width: 600px) {
         .floating-cookie-btn {
-            bottom: 20px;
-            left: 20px; /* Menyesuaikan untuk perangkat mobile di kiri */
+            bottom: 15px;
+            left: 15px;
+            width: 48px;
+            height: 48px;
         }
         .floating-cookie-btn svg {
-            width: 24px;
-            height: 24px;
+            width: 34px;
+            height: 34px;
         }
     }
 </style>
