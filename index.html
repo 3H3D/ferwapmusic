@@ -439,12 +439,12 @@
             }, 50);
         }
     </script>
-    <!-- ========================================== -->
-<!-- FERWAP MUSIC COOKIE SETTINGS POP-UP        -->
+   <!-- ========================================== -->
+<!-- FERWAP MUSIC COOKIE SETTINGS (FIXED)       -->
 <!-- ========================================== -->
 
 <!-- Tombol Kecil Ikon Cookie di Pojok Kiri Bawah -->
-<button id="open-cookie-btn" onclick="openCookieModal()" style="display: none; position: fixed; bottom: 20px; left: 20px; background-color: #1a1a1a; color: #fff; border: 1px solid #333; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 9998; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.6);" title="Cookie Settings">
+<button id="open-cookie-btn" onclick="openCookieModal()" style="display: none; position: fixed; bottom: 20px; left: 20px; background-color: #1a1a1a; color: #fff; border: 1px solid #333; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; z-index: 99998; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.7); font-size: 18px;" title="Cookie Settings">
     🍪
 </button>
 
@@ -463,7 +463,7 @@
             <button onclick="closeCookieModal()" style="background: none; border: none; color: #888; font-size: 20px; cursor: pointer; padding: 0 4px; line-height: 1;" title="Close">&times;</button>
         </div>
 
-        <!-- Bagian Teks & Pengaturan (Bisa di-scroll jika layar kecil) -->
+        <!-- Bagian Teks & Pengaturan -->
         <div style="padding: 22px 20px; max-height: 60vh; overflow-y: auto; font-size: 12px; line-height: 1.6; color: #b3b3b3;">
             <h2 style="color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 10px;">Cookie Settings</h2>
             
@@ -525,7 +525,7 @@ function closeCookieModal() {
     const modal = document.getElementById('ferwap-cookie-modal');
     const openBtn = document.getElementById('open-cookie-btn');
     if (modal) modal.style.display = 'none';
-    if (openBtn) openBtn.style.display = 'flex';
+    if (openBtn) openBtn.style.display = 'flex'; // Memunculkan kembali tombol kecil di pojok bawah
     localStorage.setItem('ferwap_cookie_accepted', 'true');
 }
 
@@ -533,10 +533,11 @@ function openCookieModal() {
     const modal = document.getElementById('ferwap-cookie-modal');
     const openBtn = document.getElementById('open-cookie-btn');
     if (modal) modal.style.display = 'flex';
-    if (openBtn) openBtn.style.display = 'none';
+    if (openBtn) openBtn.style.display = 'none'; // Menyembunyikan tombol kecil saat pop-up terbuka
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    // Jika user sebelumnya sudah klik konfirmasi, sembunyikan pop-up dan tampilkan tombol kecilnya
     if (localStorage.getItem('ferwap_cookie_accepted') === 'true') {
         const modal = document.getElementById('ferwap-cookie-modal');
         const openBtn = document.getElementById('open-cookie-btn');
