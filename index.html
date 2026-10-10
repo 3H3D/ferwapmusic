@@ -22,9 +22,17 @@
         .page-section.active {
             display: block;
         }
+        /* Mengunci halaman Discography agar fokus di tengah layar */
+        #discography.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 160px);
+        }
     </style>
 </head>
-<body class="bg-[#0b0b0c] text-zinc-100 min-h-screen selection:bg-zinc-700 selection:text-white flex flex-col justify-between">
+<body class="bg-[#0b0b0c] text-zinc-100 min-h-screen selection:bg-zinc-700 selection:text-white flex flex-col justify-between overflow-x-hidden">
 
     <!-- TOP NAVBAR (PROFESSIONAL HORIZONTAL HEADER) -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0b0c]/90 border-b border-zinc-800/80 backdrop-blur-md px-6 md:px-12 py-4 flex items-center justify-between">
@@ -115,8 +123,6 @@
         
         <!-- SECTION: HOME -->
         <section id="home" class="page-section active space-y-16">
-            
-            <!-- Hero / Main Header -->
             <div class="text-center space-y-6">
                 <span class="inline-block py-1.5 px-4 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
                     EST. 2026
@@ -251,7 +257,6 @@
                     </ul>
                 </div>
             </div>
-
         </section>
 
         <!-- SECTION: ABOUT THE LABEL -->
@@ -318,56 +323,74 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY -->
-        <section id="discography" class="page-section space-y-8">
-            <div class="border-b border-zinc-900 pb-4">
-                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Catalog</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Discography</h2>
-                <p class="text-zinc-400 text-sm font-light mt-1">Explore our official releases, singles, and curated audio productions from our creative roster.</p>
-            </div>
-
-            <!-- Music Releases Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Release 1 -->
-                <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 flex gap-4 items-center hover:border-zinc-700 transition">
-                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-600">
-                        <img src="3H3D.jpeg" alt="Cover" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-1 w-full">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">3H3D &bull; Single (2026)</span>
-                        <h3 class="text-base font-bold text-white">Latest Release</h3>
-                        <p class="text-xs text-zinc-400 font-light">Explore the latest single release from our artist roster, available across all major digital streaming platforms.</p>
-                        <div class="pt-2 flex gap-3 text-xs">
-                            <a href="https://open.spotify.com/artist/3sLx6EAfPBhJwNtoyWcG4c" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+        <!-- SECTION: DISCOGRAPHY (Fokus Terkunci di Tengah Layar Ala Sony Music) -->
+        <section id="discography" class="page-section w-full relative">
+            <div class="relative w-full max-w-2xl mx-auto text-center px-4 py-8">
+                
+                <!-- Wrapper Slider -->
+                <div class="relative min-h-[420px] flex items-center justify-center">
+                    
+                    <!-- Slide 1: 3H3D -->
+                    <div class="disc-slide active absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-500">
+                        <div class="w-40 h-40 md:w-48 md:h-48 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                            <img src="3H3D.jpeg" alt="Cover 3H3D" class="w-full h-full object-cover">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase">3H3D &bull; Featured Single</span>
+                            <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Latest Release</h3>
+                            <p class="text-xs md:text-sm text-zinc-400 font-light max-w-md mx-auto leading-relaxed">
+                                Explore the latest single release from our artist roster, available across all major digital streaming platforms.
+                            </p>
+                        </div>
+                        <div class="pt-2 flex gap-3 justify-center text-xs font-semibold">
+                            <a href="https://open.spotify.com/artist/3sLx6EAfPBhJwNtoyWcG4c" target="_blank" class="px-5 py-2.5 bg-white text-black rounded-full hover:bg-zinc-200 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-spotify"></i> Spotify
                             </a>
-                            <a href="https://www.youtube.com/@3h3dofficial" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                            <a href="https://www.youtube.com/@3h3dofficial" target="_blank" class="px-5 py-2.5 bg-zinc-900 border border-zinc-700 text-white rounded-full hover:bg-zinc-800 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-youtube"></i> YouTube
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Release 2 -->
-                <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 flex gap-4 items-center hover:border-zinc-700 transition">
-                    <div class="w-20 h-20 bg-zinc-900 rounded-xl flex-shrink-0 overflow-hidden border border-zinc-800 flex items-center justify-center text-zinc-600">
-                        <img src="ANDER.jpg" alt="Cover" class="w-full h-full object-cover">
-                    </div>
-                    <div class="space-y-1 w-full">
-                        <span class="text-[10px] font-bold tracking-widest text-zinc-500 uppercase">ANDER &bull; Single (2026)</span>
-                        <h3 class="text-base font-bold text-white">Archived Works</h3>
-                        <p class="text-xs text-zinc-400 font-light">Explore independent audio production works and collaborative projects managed under official label license.</p>
-                        <div class="pt-2 flex gap-3 text-xs">
-                            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                    <!-- Slide 2: ANDER -->
+                    <div class="disc-slide hidden absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-500 opacity-0">
+                        <div class="w-40 h-40 md:w-48 md:h-48 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                            <img src="ANDER.jpg" alt="Cover ANDER" class="w-full h-full object-cover">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase">ANDER &bull; Archived Release</span>
+                            <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Archived Works</h3>
+                            <p class="text-xs md:text-sm text-zinc-400 font-light max-w-md mx-auto leading-relaxed">
+                                Explore independent audio production works and collaborative projects managed under official label license.
+                            </p>
+                        </div>
+                        <div class="pt-2 flex gap-3 justify-center text-xs font-semibold">
+                            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="px-5 py-2.5 bg-white text-black rounded-full hover:bg-zinc-200 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-spotify"></i> Spotify
                             </a>
-                            <a href="https://www.youtube.com" target="_blank" class="text-zinc-400 hover:text-white transition flex items-center gap-1">
+                            <a href="https://www.youtube.com" target="_blank" class="px-5 py-2.5 bg-zinc-900 border border-zinc-700 text-white rounded-full hover:bg-zinc-800 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-youtube"></i> YouTube
                             </a>
                         </div>
                     </div>
+
                 </div>
+
+                <!-- Indikator Dots -->
+                <div class="flex justify-center gap-2 mt-6" id="disc-dots">
+                    <button class="w-2.5 h-2.5 rounded-full bg-white transition-all"></button>
+                    <button class="w-2.5 h-2.5 rounded-full bg-zinc-600 transition-all"></button>
+                </div>
+
             </div>
+
+            <!-- Tombol Navigasi Kiri & Kanan di Luar Kotak Tengah -->
+            <button id="prev-disc" class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
+                <i class="fa-solid fa-chevron-left text-3xl"></i>
+            </button>
+            <button id="next-disc" class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
+                <i class="fa-solid fa-chevron-right text-3xl"></i>
+            </button>
         </section>
 
     </main>
@@ -378,67 +401,96 @@
             <a href="https://www.facebook.com/ferwapmusic" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ferwapmusic" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
             <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. &bull; <button onclick="scrollToSection('home-privacy')" class="underline hover:text-white focus:outline-none">Privacy Policy</button> &bull; <button onclick="scrollToSection('home-terms')" class="underline hover:text-white focus:outline-none">Terms Of Service</button></p>
+        </div> 
+        <p>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved. &bull; <button onclick="scrollToSection('home-privacy')" class="underline hover:text-white">Privacy</button></p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Fungsi Pindah Halaman Utama
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Tutup menu mobile jika terbuka
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // Fungsi Scroll ke Bagian Tertentu di Beranda
+        function scrollToSection(sectionId) {
+            showPage('home');
+            setTimeout(() => {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // Toggle Mobile Menu
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
-        const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
-        const mobileChevron = document.getElementById('mobile-chevron');
-
-        const mobileLegalBtn = document.getElementById('mobile-legal-btn');
-        const mobileLegalContent = document.getElementById('mobile-legal-content');
-        const mobileLegalChevron = document.getElementById('mobile-legal-chevron');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Toggle Mobile Dropdown About
+        const mobileDropdownBtn = document.getElementById('mobile-dropdown-btn');
+        const mobileDropdownContent = document.getElementById('mobile-dropdown-content');
+        const mobileChevron = document.getElementById('mobile-chevron');
         mobileDropdownBtn.addEventListener('click', () => {
             mobileDropdownContent.classList.toggle('hidden');
             mobileChevron.classList.toggle('rotate-180');
         });
 
+        // Toggle Mobile Dropdown Legal
+        const mobileLegalBtn = document.getElementById('mobile-legal-btn');
+        const mobileLegalContent = document.getElementById('mobile-legal-content');
+        const mobileLegalChevron = document.getElementById('mobile-legal-chevron');
         mobileLegalBtn.addEventListener('click', () => {
             mobileLegalContent.classList.toggle('hidden');
             mobileLegalChevron.classList.toggle('rotate-180');
         });
 
-        function showPage(pageId) {
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+        // Script untuk Slider Discography (Fokus Tengah)
+        const slides = document.querySelectorAll('.disc-slide');
+        const dots = document.querySelectorAll('#disc-dots button');
+        let currentDisc = 0;
 
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
-
-            mobileMenu.classList.add('hidden');
-            mobileDropdownContent.classList.add('hidden');
-            mobileLegalContent.classList.add('hidden');
-            mobileChevron.classList.remove('rotate-180');
-            mobileLegalChevron.classList.remove('rotate-180');
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function scrollToSection(elementId) {
-            showPage('home');
-            setTimeout(() => {
-                const targetElement = document.getElementById(elementId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function updateDiscSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('hidden', 'opacity-0');
+                    slide.classList.add('active', 'opacity-100');
+                    dots[i].className = 'w-2.5 h-2.5 rounded-full bg-white transition-all';
+                } else {
+                    slide.classList.add('hidden', 'opacity-0');
+                    slide.classList.remove('active', 'opacity-100');
+                    dots[i].className = 'w-2.5 h-2.5 rounded-full bg-zinc-600 transition-all';
                 }
-            }, 50);
+            });
         }
+
+        document.getElementById('next-disc').addEventListener('click', () => {
+            currentDisc = (currentDisc + 1) % slides.length;
+            updateDiscSlide(currentDisc);
+        });
+
+        document.getElementById('prev-disc').addEventListener('click', () => {
+            currentDisc = (currentDisc - 1 + slides.length) % slides.length;
+            updateDiscSlide(currentDisc);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentDisc = index;
+                updateDiscSlide(currentDisc);
+            });
+        });
     </script>
-   
 </body>
 </html>
