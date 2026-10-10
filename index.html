@@ -260,7 +260,7 @@
         </section>
 
         <!-- SECTION: ABOUT THE LABEL -->
-        <section id="about" class="page-section space-y-6">
+        <section id="about" class="page-section space-y-8">
             <div class="border-b border-zinc-900 pb-4">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">About The Label</h2>
@@ -273,8 +273,30 @@
                     As a modern music entity, Ferwap Music Entertainment bridges the gap between raw independent talent and global digital platforms. We provide complete end-to-end support for our roster—ranging from original composition, vocal tracking, and advanced mixing/mastering to copyright administration, digital asset protection, and multi-platform promotional campaigns.
                 </p>
                 <p>
-                    Our mission is to foster meaningful collaborations among independent producers, songwriters, and vocalists while curating a distinct sound identity across diverse contemporary genres. By leveraging innovative production workflows and modern digital infrastructure, Ferwap Music Entertainment ensures that every project reaches its full creative potential and finds its rightful audience worldwide.
+                    Our mission is to foster meaningful collaborations among independent producers, songwriters, and vocalists while curating a distinct sound identity across diverse contemporary genres.
                 </p>
+            </div>
+
+            <!-- BLOK FOUNDER PROFILE (NAMA PENDIRI) -->
+            <div class="pt-6 border-t border-zinc-900">
+                <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Leadership</span>
+                <div class="mt-4 bg-[#161415] border border-zinc-800/80 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-24 h-24 bg-zinc-900 rounded-full flex-shrink-0 border border-zinc-700 overflow-hidden flex items-center justify-center text-zinc-300 text-2xl font-bold">
+                        <span>F</span>
+                    </div>
+                    <div class="space-y-2 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-white">Ferrson</h3>
+                        <p class="text-xs text-red-500 font-semibold tracking-wider uppercase">Founder & Executive Producer</p>
+                        <p class="text-xs md:text-sm text-zinc-400 font-light leading-relaxed">
+                            Established Ferwap Music Entertainment (Ferrson Production) to provide independent artists with full creative freedom, professional audio engineering, and strategic catalog management.
+                        </p>
+                        <div class="pt-2 flex justify-center md:justify-start gap-4 text-xs font-semibold">
+                            <a href="https://www.youtube.com/@ferrsonproduction" target="_blank" class="px-4 py-2 bg-zinc-900 border border-zinc-700 rounded-lg text-white hover:bg-zinc-800 transition flex items-center gap-2">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -323,7 +345,7 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY (Fokus Terkunci di Tengah Layar Ala Sony Music) -->
+        <!-- SECTION: DISCOGRAPHY (Fokus Tengah & Mousewheel Support) -->
         <section id="discography" class="page-section w-full relative">
             <div class="relative w-full max-w-2xl mx-auto text-center px-4 py-8">
                 
@@ -460,10 +482,12 @@
             mobileLegalChevron.classList.toggle('rotate-180');
         });
 
-        // Script untuk Slider Discography (Fokus Tengah)
+        // Script untuk Slider Discography (Fokus Tengah & Mousewheel Support)
         const slides = document.querySelectorAll('.disc-slide');
         const dots = document.querySelectorAll('#disc-dots button');
+        const discSection = document.getElementById('discography');
         let currentDisc = 0;
+        let isScrolling = false;
 
         function updateDiscSlide(index) {
             slides.forEach((slide, i) => {
@@ -495,6 +519,28 @@
                 updateDiscSlide(currentDisc);
             });
         });
+
+        // Fitur: Scroll mouse di dalam area Discography hanya mengganti slide
+        if (discSection) {
+            discSection.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                
+                if (isScrolling) return;
+                isScrolling = true;
+
+                if (e.deltaY > 0) {
+                    currentDisc = (currentDisc + 1) % slides.length;
+                } else {
+                    currentDisc = (currentDisc - 1 + slides.length) % slides.length;
+                }
+                
+                updateDiscSlide(currentDisc);
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 600);
+            }, { passive: false });
+        }
     </script>
 </body>
 </html>
