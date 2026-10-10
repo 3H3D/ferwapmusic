@@ -22,13 +22,20 @@
         .page-section.active {
             display: block;
         }
-        /* Mengunci halaman Discography agar fokus di tengah layar */
+
+        /* KHUSUS DISCOGRAPHY: Kunci Halaman Penuh di Tengah & Matikan Scroll Body */
+        body.discography-mode {
+            overflow: hidden !important;
+            height: 100vh !important;
+        }
+
         #discography.active {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: calc(100vh - 160px);
+            height: calc(100vh - 120px);
+            overflow: hidden;
         }
     </style>
 </head>
@@ -119,7 +126,7 @@
 
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-24">
+    <main class="flex-1 max-w-4xl mx-auto w-full px-6 pt-24 pb-12 flex flex-col justify-center">
         
         <!-- SECTION: HOME -->
         <section id="home" class="page-section active space-y-16">
@@ -277,7 +284,7 @@
                 </p>
             </div>
 
-            <!-- BLOK FOUNDER PROFILE (NAMA PENDIRI) -->
+            <!-- BLOK FOUNDER PROFILE -->
             <div class="pt-6 border-t border-zinc-900">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Leadership</span>
                 <div class="mt-4 bg-[#161415] border border-zinc-800/80 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
@@ -308,7 +315,6 @@
                 <p class="text-zinc-400 text-sm font-light mt-1">Discover the talented independent artists signed to Ferwap Music Entertainment.</p>
             </div>
 
-            <!-- Artist Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Artist 1: 3H3D -->
                 <div class="bg-[#161415] border border-zinc-800/80 rounded-2xl p-5 space-y-4 hover:border-zinc-700 transition">
@@ -345,12 +351,12 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY (Fokus Tengah & Mousewheel Support) -->
+        <!-- SECTION: DISCOGRAPHY (TERKUNCI FULL DI TENGAH, TANPA SCROLLBAR PERMUKAAN) -->
         <section id="discography" class="page-section w-full relative">
-            <div class="relative w-full max-w-2xl mx-auto text-center px-4 py-8">
+            <div class="relative w-full max-w-2xl mx-auto text-center px-4">
                 
                 <!-- Wrapper Slider -->
-                <div class="relative min-h-[420px] flex items-center justify-center">
+                <div class="relative min-h-[400px] flex items-center justify-center">
                     
                     <!-- Slide 1: 3H3D -->
                     <div class="disc-slide active absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-500">
@@ -399,14 +405,14 @@
                 </div>
 
                 <!-- Indikator Dots -->
-                <div class="flex justify-center gap-2 mt-6" id="disc-dots">
+                <div class="flex justify-center gap-2 mt-4" id="disc-dots">
                     <button class="w-2.5 h-2.5 rounded-full bg-white transition-all"></button>
                     <button class="w-2.5 h-2.5 rounded-full bg-zinc-600 transition-all"></button>
                 </div>
 
             </div>
 
-            <!-- Tombol Navigasi Kiri & Kanan di Luar Kotak Tengah -->
+            <!-- Tombol Navigasi Kiri & Kanan -->
             <button id="prev-disc" class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
                 <i class="fa-solid fa-chevron-left text-3xl"></i>
             </button>
@@ -418,7 +424,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-[#0b0b0c] border-t border-zinc-900 py-8 text-center text-xs text-zinc-400 space-y-4">
+    <footer class="bg-[#0b0b0c] border-t border-zinc-900 py-6 text-center text-xs text-zinc-400 space-y-3">
         <div class="flex justify-center gap-6 text-lg text-zinc-400">
             <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
@@ -438,7 +444,20 @@
             document.querySelectorAll('.page-section').forEach(sec => {
                 sec.classList.remove('active');
             });
-            document.getElementById(pageId).classList.add('active');
+
+            // Aktifkan Seksi Terpilih
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // KONTROL LOCK SCROLL KHUSUS DISCOGRAPHY
+            if (pageId === 'discography') {
+                document.body.classList.add('discography-mode');
+            } else {
+                document.body.classList.remove('discography-mode');
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
             
             // Tutup menu mobile jika terbuka
@@ -482,10 +501,9 @@
             mobileLegalChevron.classList.toggle('rotate-180');
         });
 
-        // Script untuk Slider Discography (Fokus Tengah & Mousewheel Support)
+        // Script Slider Discography
         const slides = document.querySelectorAll('.disc-slide');
         const dots = document.querySelectorAll('#disc-dots button');
-        const discSection = document.getElementById('discography');
         let currentDisc = 0;
         let isScrolling = false;
 
@@ -520,9 +538,9 @@
             });
         });
 
-        // Fitur: Scroll mouse di dalam area Discography hanya mengganti slide
-        if (discSection) {
-            discSection.addEventListener('wheel', (e) => {
+        // DENGARKAN SCROLL MOUSE DI SELURUH HALAMAN KETIKA MODUS DISCOGRAPHY
+        window.addEventListener('wheel', (e) => {
+            if (document.body.classList.contains('discography-mode')) {
                 e.preventDefault();
                 
                 if (isScrolling) return;
@@ -538,9 +556,9 @@
 
                 setTimeout(() => {
                     isScrolling = false;
-                }, 600);
-            }, { passive: false });
-        }
+                }, 500);
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>
