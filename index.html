@@ -23,10 +23,19 @@
             display: block;
         }
 
-        /* KHUSUS DISCOGRAPHY: Kunci Halaman Penuh di Tengah & Matikan Scroll Body */
+        /* KHUSUS DISCOGRAPHY: Kunci Halaman Penuh di Layar Kaca & Tampilkan Footer */
         body.discography-mode {
             overflow: hidden !important;
             height: 100vh !important;
+        }
+
+        body.discography-mode #main-container {
+            padding-top: 5rem !important;
+            padding-bottom: 0.5rem !important;
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         #discography.active {
@@ -34,14 +43,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 120px);
+            height: 100%;
             overflow: hidden;
         }
     </style>
 </head>
 <body class="bg-[#0b0b0c] text-zinc-100 min-h-screen selection:bg-zinc-700 selection:text-white flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVBAR (PROFESSIONAL HORIZONTAL HEADER) -->
+    <!-- TOP NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b0b0c]/90 border-b border-zinc-800/80 backdrop-blur-md px-6 md:px-12 py-4 flex items-center justify-between">
         
         <!-- Brand Logo -->
@@ -125,8 +134,8 @@
     </div>
 
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-1 max-w-4xl mx-auto w-full px-6 pt-24 pb-12 flex flex-col justify-center">
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="main-container" class="flex-1 max-w-4xl mx-auto w-full px-6 pt-32 pb-16 flex flex-col justify-center">
         
         <!-- SECTION: HOME -->
         <section id="home" class="page-section active space-y-16">
@@ -351,26 +360,26 @@
             </div>
         </section>
 
-        <!-- SECTION: DISCOGRAPHY (TERKUNCI FULL DI TENGAH, TANPA SCROLLBAR PERMUKAAN) -->
+        <!-- SECTION: DISCOGRAPHY -->
         <section id="discography" class="page-section w-full relative">
             <div class="relative w-full max-w-2xl mx-auto text-center px-4">
                 
                 <!-- Wrapper Slider -->
-                <div class="relative min-h-[400px] flex items-center justify-center">
+                <div class="relative min-h-[380px] flex items-center justify-center">
                     
                     <!-- Slide 1: 3H3D -->
                     <div class="disc-slide active absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-500">
-                        <div class="w-40 h-40 md:w-48 md:h-48 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                        <div class="w-36 h-36 md:w-44 md:h-44 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                             <img src="3H3D.jpeg" alt="Cover 3H3D" class="w-full h-full object-cover">
                         </div>
-                        <div class="space-y-2">
+                        <div class="space-y-1.5">
                             <span class="text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase">3H3D &bull; Featured Single</span>
                             <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Latest Release</h3>
                             <p class="text-xs md:text-sm text-zinc-400 font-light max-w-md mx-auto leading-relaxed">
                                 Explore the latest single release from our artist roster, available across all major digital streaming platforms.
                             </p>
                         </div>
-                        <div class="pt-2 flex gap-3 justify-center text-xs font-semibold">
+                        <div class="pt-1 flex gap-3 justify-center text-xs font-semibold">
                             <a href="https://open.spotify.com/artist/3sLx6EAfPBhJwNtoyWcG4c" target="_blank" class="px-5 py-2.5 bg-white text-black rounded-full hover:bg-zinc-200 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-spotify"></i> Spotify
                             </a>
@@ -382,17 +391,17 @@
 
                     <!-- Slide 2: ANDER -->
                     <div class="disc-slide hidden absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-500 opacity-0">
-                        <div class="w-40 h-40 md:w-48 md:h-48 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                        <div class="w-36 h-36 md:w-44 md:h-44 bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                             <img src="ANDER.jpg" alt="Cover ANDER" class="w-full h-full object-cover">
                         </div>
-                        <div class="space-y-2">
+                        <div class="space-y-1.5">
                             <span class="text-[10px] font-bold tracking-[0.25em] text-red-500 uppercase">ANDER &bull; Archived Release</span>
                             <h3 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Archived Works</h3>
                             <p class="text-xs md:text-sm text-zinc-400 font-light max-w-md mx-auto leading-relaxed">
                                 Explore independent audio production works and collaborative projects managed under official label license.
                             </p>
                         </div>
-                        <div class="pt-2 flex gap-3 justify-center text-xs font-semibold">
+                        <div class="pt-1 flex gap-3 justify-center text-xs font-semibold">
                             <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="px-5 py-2.5 bg-white text-black rounded-full hover:bg-zinc-200 transition flex items-center gap-2 shadow-lg">
                                 <i class="fa-brands fa-spotify"></i> Spotify
                             </a>
@@ -405,7 +414,7 @@
                 </div>
 
                 <!-- Indikator Dots -->
-                <div class="flex justify-center gap-2 mt-4" id="disc-dots">
+                <div class="flex justify-center gap-2 mt-2" id="disc-dots">
                     <button class="w-2.5 h-2.5 rounded-full bg-white transition-all"></button>
                     <button class="w-2.5 h-2.5 rounded-full bg-zinc-600 transition-all"></button>
                 </div>
@@ -413,24 +422,24 @@
             </div>
 
             <!-- Tombol Navigasi Kiri & Kanan -->
-            <button id="prev-disc" class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
+            <button id="prev-disc" class="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
                 <i class="fa-solid fa-chevron-left text-3xl"></i>
             </button>
-            <button id="next-disc" class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
+            <button id="next-disc" class="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 p-4 text-zinc-500 hover:text-white transition focus:outline-none z-20">
                 <i class="fa-solid fa-chevron-right text-3xl"></i>
             </button>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#0b0b0c] border-t border-zinc-900 py-6 text-center text-xs text-zinc-400 space-y-3">
+    <!-- FOOTER LENGKAP -->
+    <footer class="bg-[#0b0b0c] border-t border-zinc-900 py-4 text-center text-xs text-zinc-400 space-y-2 z-40 relative">
         <div class="flex justify-center gap-6 text-lg text-zinc-400">
             <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
             <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
         </div> 
-        <p>
+        <p class="text-[11px] md:text-xs">
             &copy; 2026 Ferwap Music Entertainment. All Rights Reserved. &bull; 
             <button onclick="scrollToSection('home-privacy')" class="underline hover:text-white">Privacy Policy</button> &bull; 
             <button onclick="scrollToSection('home-terms')" class="underline hover:text-white">Terms of Service</button>
@@ -445,7 +454,6 @@
                 sec.classList.remove('active');
             });
 
-            // Aktifkan Seksi Terpilih
             const targetSection = document.getElementById(pageId);
             if (targetSection) {
                 targetSection.classList.add('active');
@@ -538,7 +546,7 @@
             });
         });
 
-        // DENGARKAN SCROLL MOUSE DI SELURUH HALAMAN KETIKA MODUS DISCOGRAPHY
+        // DENGARKAN SCROLL MOUSE KETIKA MODUS DISCOGRAPHY
         window.addEventListener('wheel', (e) => {
             if (document.body.classList.contains('discography-mode')) {
                 e.preventDefault();
