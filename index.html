@@ -34,7 +34,7 @@
             overflow: hidden;
         }
 
-        /* Gradasi hitam melingkar untuk memudarkan pinggiran foto ke hitam */
+        /* Gradasi pekat melingkar untuk menghilangkan total potongan sudut abu-abu pada foto */
         .artist-img-wrapper {
             position: relative;
             display: inline-block;
@@ -43,7 +43,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle, transparent 40%, #000000 95%);
+            /* Memperpekat efek pudar agar menyatu sempurna dengan background hitam */
+            background: radial-gradient(circle, transparent 20%, #000000 85%);
             pointer-events: none;
         }
     </style>
@@ -67,32 +68,29 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (GAYA SONY MUSIC: FOTO MEMUDAR KE HITAM, NAMA MUNGIL DI SAMPING) -->
+        <!-- HALAMAN 1: HOME (FOTO DI TENAH, NAMA ARTIS DI ATAS SIKU KIRI <) -->
         <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black px-4 md:px-12">
             
-            <!-- Tombol Kiri -->
+            <!-- Nama Artis diletakkan di Atas Siku Kiri (<) -->
+            <div class="absolute left-6 md:left-24 top-10 md:top-16 z-20 pointer-events-none">
+                <h1 id="artist-name" class="text-lg sm:text-xl md:text-2xl font-bold tracking-widest text-white/90 uppercase drop-shadow-lg">3H3D</h1>
+            </div>
+
+            <!-- Tombol Kiri (<) -->
             <button id="prev-slide" class="absolute left-2 md:left-8 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
-            <!-- Container Grid: Nama Mungil di Samping, Foto Memudar Gelap Menyatu -->
-            <div class="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 h-full py-4">
-                
-                <!-- Nama Artis Mungil di Samping Foto -->
-                <div class="z-10 text-center md:text-right">
-                    <h1 id="artist-name" class="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-white/90 uppercase">3H3D</h1>
-                </div>
-
-                <!-- Foto Artis dengan Efek Pudar Pinggiran Hitam -->
-                <div class="artist-img-wrapper relative max-w-sm md:max-w-md h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+            <!-- Foto Artis Tepat di Tengah Layar dengan Gelap Pekat di Sudutnya -->
+            <div class="w-full flex items-center justify-center h-full py-4">
+                <div class="artist-img-wrapper relative max-w-sm md:max-w-md h-[55vh] md:h-[65vh] flex items-center justify-center overflow-hidden">
                     <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group">
                         <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500">
                     </a>
                 </div>
-
             </div>
 
-            <!-- Tombol Kanan -->
+            <!-- Tombol Kanan (>) -->
             <button id="next-slide" class="absolute right-2 md:right-8 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
                 <i class="fa-solid fa-angle-right"></i>
             </button>
