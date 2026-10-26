@@ -43,7 +43,6 @@
             content: '';
             position: absolute;
             inset: 0;
-            /* Dibuat lebih gelap dan pekat agar memudar sempurna ke hitam */
             background: radial-gradient(circle, transparent 15%, #000000 75%);
             pointer-events: none;
         }
@@ -68,11 +67,11 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (NAMA ARTIS DEKAT SIKU KIRI <, FOTO SUPER GELAP SUDUTNYA DI TENGAH) -->
+        <!-- HALAMAN 1: HOME (NAMA ARTIS PAS PERSIS DI ATAS SIKU KIRI <) -->
         <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black px-4 md:px-12">
             
-            <!-- Area Kiri: Nama Artis Diturunkan Tepat Berdekatan di Atas Siku Panah Kiri (<) -->
-            <div class="absolute left-3 md:left-8 bottom-[52%] md:bottom-[54%] z-20 pointer-events-none pl-2 md:pl-4">
+            <!-- Area Kiri: Nama Artis Digeser Pas Presisi di Atas Siku Panah Kiri (<) -->
+            <div class="absolute left-2.5 md:left-8 top-[calc(50%-48px)] md:top-[calc(50%-56px)] z-20 pointer-events-none p-2">
                 <h1 id="artist-name" class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-white/90 uppercase drop-shadow-lg">3H3D</h1>
             </div>
 
