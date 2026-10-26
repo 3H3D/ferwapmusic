@@ -18,7 +18,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
             height: 100vh;
-            overflow: hidden; /* Mengunci total agar halaman home tidak bisa scroll */
+            overflow: hidden;
         }
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
@@ -59,15 +59,15 @@
             }
         }
 
-        /* Handphone (Mobile) - Disesuaikan agar muat lengkap tanpa terpotong */
+        /* Handphone (Mobile) - Dioptimalkan agar foto dan footer sama-sama muat lengkap */
         @media (max-width: 768px) {
             #artist-name-container {
                 left: 12px;
-                top: calc(50% - 42px);
+                top: calc(50% - 40px);
             }
             .artist-img-wrapper {
-                height: 32vh !important;
-                max-width: 220px !important;
+                height: 28vh !important;
+                max-width: 190px !important;
             }
         }
     </style>
@@ -92,7 +92,7 @@
     <div class="flex-grow pt-14 h-[calc(100vh-56px)] overflow-hidden relative">
 
         <!-- HALAMAN 1: HOME (TERKUNCI PAS SETINGGI LAYAR - TANPA SCROLL) -->
-        <main id="page-home" class="page-section active absolute inset-0 w-full h-full flex-col justify-between items-center bg-black px-4 md:px-12 pb-2 pt-1">
+        <main id="page-home" class="page-section active absolute inset-0 w-full h-full flex-col justify-between items-center bg-black px-4 md:px-12 pb-3 pt-1">
             
             <!-- Area Tengah: Foto & Navigasi Slide -->
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
@@ -108,7 +108,7 @@
 
                 <!-- Foto Artis di Tengah dengan Efek Gelap Pekat -->
                 <div class="w-full flex items-center justify-center h-full">
-                    <div class="artist-img-wrapper relative max-w-xs md:max-w-sm h-[38vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+                    <div class="artist-img-wrapper relative max-w-xs md:max-w-sm h-[36vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                         <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group">
                             <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500">
                         </a>
@@ -122,7 +122,7 @@
             </div>
 
             <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas Lengkap untuk HP -->
-            <div class="w-full flex flex-col items-center justify-center gap-1 z-20 pb-2">
+            <div class="w-full flex flex-col items-center justify-center gap-1.5 z-20 pb-3">
                 <!-- Indikator Dot -->
                 <div class="flex items-center justify-center gap-1.5">
                     <span class="dot w-1.5 h-1.5 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
