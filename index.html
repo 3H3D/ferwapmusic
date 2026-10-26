@@ -43,6 +43,14 @@
             background: radial-gradient(circle, transparent 15%, #000000 75%);
             pointer-events: none;
         }
+
+        /* Penyesuaian khusus untuk Tampilan Layar HP (Mobile) agar sangat rapi */
+        @media (max-width: 768px) {
+            #artist-name-container {
+                top: calc(50% - 62px) !important;
+                left: 12px !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-black text-white flex flex-col justify-between h-screen overflow-hidden">
@@ -69,8 +77,8 @@
             
             <!-- Area Tengah: Foto & Navigasi Slide -->
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
-                <!-- Nama Artis: Huruf '3' Pertama Tepat Lurus di Atas Siku Panah Kiri (<) -->
-                <div class="absolute left-2 md:left-8 top-[calc(50%-38px)] md:top-[calc(50%-44px)] z-20 pointer-events-none p-2">
+                <!-- Nama Artis: Digeser Sedikit ke Atas agar Pas di Atas Siku Panah Kiri (<) -->
+                <div id="artist-name-container" class="absolute left-3 md:left-8 top-[calc(50%-48px)] md:top-[calc(50%-54px)] z-20 pointer-events-none p-2">
                     <h1 id="artist-name" class="text-sm sm:text-base md:text-lg font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
                 </div>
 
@@ -94,7 +102,7 @@
                 </button>
             </div>
 
-            <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas (Pas di dalam layar) -->
+            <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas -->
             <div class="w-full flex flex-col items-center justify-center gap-1.5 z-20 pb-1">
                 <!-- Indikator Dot -->
                 <div class="flex items-center justify-center gap-2">
