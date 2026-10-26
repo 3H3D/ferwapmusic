@@ -37,7 +37,7 @@
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVIGATION (Menu Home dihilangkan dari tampilan atas, logo tetap berfungsi kembali ke Home) -->
+    <!-- TOP NAVIGATION -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900">
         <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer">
             <div class="w-7 h-7 md:w-8 md:h-8 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs md:text-sm">W</div>
@@ -54,13 +54,13 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (HERO SLIDER - TANPA SCROLL & GAMBAR BISA DIKLIK) -->
+        <!-- HALAMAN 1: HOME (HERO SLIDER - TANPA KOTAK HITAM & GAMBAR BISA DIKLIK) -->
         <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black">
             
             <!-- Bungkus Gambar dengan Link agar Seluruh Area Gambar Bisa Diklik -->
             <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="absolute inset-0 z-0 block cursor-pointer group flex items-center justify-center">
                 <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500 py-4">
-                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="absolute inset-0 bg-black/30"></div>
             </a>
 
             <!-- Tombol Kiri -->
@@ -68,10 +68,10 @@
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
-            <!-- Teks di Tengah -->
-            <div class="relative z-10 text-center space-y-3 px-6 max-w-xl mx-auto pointer-events-none bg-black/40 backdrop-blur-[2px] py-6 rounded-2xl border border-white/10">
-                <p id="artist-subtitle" class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white/90 font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
-                <h1 id="artist-name" class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
+            <!-- Teks di Tengah (Tanpa Kotak Hitam, Lebih Proporsional & Bersih) -->
+            <div class="relative z-10 text-center space-y-2 px-6 max-w-xl mx-auto pointer-events-none drop-shadow-2xl">
+                <p id="artist-subtitle" class="text-[9px] sm:text-xs uppercase tracking-[0.3em] text-zinc-300 font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
+                <h1 id="artist-name" class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
             </div>
 
             <!-- Tombol Kanan -->
@@ -262,12 +262,7 @@
                 image: "ANDER.jpg",
                 link: "#"
             },
-            {
-                name: "FERWAP MUSIC",
-                subtitle: "Independent Record Label &bull; Audio Production House",
-                image: "3H3D.jpeg",
-                link: "#"
-            }
+           
         ];
 
         let currentIndex = 0;
