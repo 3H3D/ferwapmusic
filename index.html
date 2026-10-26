@@ -54,7 +54,7 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (GAYA SONY MUSIC: TEKS PROPOSIONAL DI KIRI, FOTO DI KANAN) -->
+        <!-- HALAMAN 1: HOME (HANYA NAMA ARTIS & FOTO RAPI DI KANAN) -->
         <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black px-6 md:px-16">
             
             <!-- Tombol Kiri -->
@@ -62,19 +62,18 @@
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
-            <!-- Container Grid: Kiri Teks (Ukuran Lebih Proporsional), Kanan Foto -->
+            <!-- Container Grid: Kiri Nama Artis Saja, Kanan Foto Bersih -->
             <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center h-full gap-8 py-6">
                 
-                <!-- Sisi Kiri: Teks Nama & Subtitle dengan Ukuran Lebih Proporsional -->
+                <!-- Sisi Kiri: Hanya Nama Artis Saja (Tanpa Keterangan Panjang) -->
                 <div class="text-left space-y-2 z-10 pl-4 md:pl-10">
-                    <p id="artist-subtitle" class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-zinc-400 font-bold">Featured Artist &bull; Independent Singer Songwriter</p>
-                    <h1 id="artist-name" class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">3H3D</h1>
+                    <h1 id="artist-name" class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">3H3D</h1>
                 </div>
 
-                <!-- Sisi Kanan: Foto Artis (Seluruh Gambar Bisa Diklik) -->
+                <!-- Sisi Kanan: Foto Artis (Cover Penuh, Rapi, Bisa Diklik) -->
                 <div class="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center">
-                    <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group relative">
-                        <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-95 group-hover:brightness-100 transition duration-500 rounded-xl">
+                    <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group relative overflow-hidden rounded-xl border border-zinc-800">
+                        <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover object-center filter brightness-90 group-hover:brightness-100 group-hover:scale-105 transition duration-500">
                     </a>
                 </div>
 
@@ -254,37 +253,28 @@
             window.scrollTo(0, 0); // Kembalikan posisi scroll ke atas
         }
 
-        // Script Slider Banner Utama
+        // Script Slider Banner Utama (Hanya Nama Artis & Gambar)
         const slides = [
             {
                 name: "3H3D",
-                subtitle: "Featured Artist &bull; Independent Singer Songwriter",
                 image: "3H3D.jpeg",
                 link: "https://3h3dofficial.web.id"
             },
             {
                 name: "ANDER",
-                subtitle: "Roster Artist &bull; Pop / Reggae",
                 image: "ANDER.jpg",
                 link: "#"
             },
-            {
-                name: "FERWAP MUSIC",
-                subtitle: "Independent Record Label &bull; Audio Production House",
-                image: "3H3D.jpeg",
-                link: "#"
-            }
+           
         ];
 
         let currentIndex = 0;
         const nameEl = document.getElementById('artist-name');
-        const subEl = document.getElementById('artist-subtitle');
         const linkEl = document.getElementById('artist-link');
         const bannerImg = document.getElementById('banner-image');
 
         function updateSlide(index) {
             nameEl.innerHTML = slides[index].name;
-            subEl.innerHTML = slides[index].subtitle;
             linkEl.href = slides[index].link;
             bannerImg.src = slides[index].image;
             
