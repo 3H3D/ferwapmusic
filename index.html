@@ -33,6 +33,19 @@
             height: calc(100vh - 80px);
             overflow: hidden;
         }
+
+        /* Gradasi hitam melingkar untuk memudarkan pinggiran foto ke hitam */
+        .artist-img-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .artist-img-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle, transparent 40%, #000000 95%);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -54,7 +67,7 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (GAYA SONY MUSIC: TANPA BINGKAI KOTAK, NAMA ARTIS PAS DI SAMPING FOTO) -->
+        <!-- HALAMAN 1: HOME (GAYA SONY MUSIC: FOTO MEMUDAR KE HITAM, NAMA MUNGIL DI SAMPING) -->
         <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black px-4 md:px-12">
             
             <!-- Tombol Kiri -->
@@ -62,18 +75,18 @@
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
-            <!-- Layout Sampingan ala Sony Music (Tanpa garis bingkai) -->
-            <div class="w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 h-full py-4">
+            <!-- Container Grid: Nama Mungil di Samping, Foto Memudar Gelap Menyatu -->
+            <div class="w-full max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 h-full py-4">
                 
-                <!-- Nama Artis di Samping Gambar -->
-                <div class="z-10 text-center md:text-right md:pr-4">
-                    <h1 id="artist-name" class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-white"></h1>
+                <!-- Nama Artis Mungil di Samping Foto -->
+                <div class="z-10 text-center md:text-right">
+                    <h1 id="artist-name" class="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-white/90 uppercase">3H3D</h1>
                 </div>
 
-                <!-- Foto Artis Menyatu dengan Background (Tanpa Bingkai/Sudut Potongan) -->
-                <div class="relative max-w-lg md:max-w-xl h-[55vh] md:h-[65vh] flex items-center justify-center">
+                <!-- Foto Artis dengan Efek Pudar Pinggiran Hitam -->
+                <div class="artist-img-wrapper relative max-w-sm md:max-w-md h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
                     <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group">
-                        <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-95 group-hover:brightness-100 transition duration-500">
+                        <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500">
                     </a>
                 </div>
 
