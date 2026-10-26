@@ -28,7 +28,7 @@
             display: flex;
         }
         
-        /* Khusus halaman Home: dikunci agar tepat setinggi layar dan tidak ada scrollbar */
+        /* Khusus halaman Home: dikunci agar tepat setinggi layar dan tidak ada scroll */
         #page-home {
             height: calc(100vh - 80px);
             overflow: hidden;
@@ -37,14 +37,13 @@
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- TOP NAVIGATION (Menggunakan Sistem Pindah Halaman Instan) -->
+    <!-- TOP NAVIGATION (Menu Home dihilangkan dari tampilan atas, logo tetap berfungsi kembali ke Home) -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-5 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900">
         <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer">
             <div class="w-7 h-7 md:w-8 md:h-8 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs md:text-sm">W</div>
             <span class="font-extrabold tracking-widest uppercase text-xs md:text-sm">Ferwap Music</span>
         </a>
         <nav class="flex items-center gap-3 sm:gap-6 md:gap-8 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-zinc-300">
-            <button onclick="switchPage('home')" class="hover:text-white transition focus:outline-none">Home</button>
             <button onclick="switchPage('about')" class="hover:text-white transition focus:outline-none">About</button>
             <button onclick="switchPage('news')" class="hover:text-white transition focus:outline-none">News</button>
             <button onclick="switchPage('artists')" class="hover:text-white transition focus:outline-none">Artists</button>
@@ -55,13 +54,13 @@
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
     <div class="flex-grow pt-20">
 
-        <!-- HALAMAN 1: HOME (HERO SLIDER - GAMBAR BISA DIKLIK LANGSUNG) -->
-        <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden">
+        <!-- HALAMAN 1: HOME (HERO SLIDER - TANPA SCROLL & GAMBAR BISA DIKLIK) -->
+        <main id="page-home" class="page-section active relative w-full items-center justify-center overflow-hidden bg-black">
             
             <!-- Bungkus Gambar dengan Link agar Seluruh Area Gambar Bisa Diklik -->
-            <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="absolute inset-0 z-0 block cursor-pointer group">
-                <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-cover object-center filter brightness-75 group-hover:brightness-90 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/40"></div>
+            <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="absolute inset-0 z-0 block cursor-pointer group flex items-center justify-center">
+                <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500 py-4">
+                <div class="absolute inset-0 bg-black/40"></div>
             </a>
 
             <!-- Tombol Kiri -->
@@ -69,8 +68,8 @@
                 <i class="fa-solid fa-angle-left"></i>
             </button>
 
-            <!-- Teks di Tengah (Minimalis & Proporsional) -->
-            <div class="relative z-10 text-center space-y-3 px-6 max-w-xl mx-auto pointer-events-none">
+            <!-- Teks di Tengah -->
+            <div class="relative z-10 text-center space-y-3 px-6 max-w-xl mx-auto pointer-events-none bg-black/40 backdrop-blur-[2px] py-6 rounded-2xl border border-white/10">
                 <p id="artist-subtitle" class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white/90 font-bold drop-shadow-md">Featured Artist &bull; Independent Singer Songwriter</p>
                 <h1 id="artist-name" class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl">3H3D</h1>
             </div>
@@ -81,7 +80,7 @@
             </button>
 
             <!-- Indikator Dot -->
-            <div class="absolute bottom-8 z-20 flex items-center justify-center gap-3 w-full pointer-events-none">
+            <div class="absolute bottom-6 z-20 flex items-center justify-center gap-3 w-full pointer-events-none">
                 <span class="dot w-2.5 h-2.5 rounded-full bg-red-600 transition-all cursor-pointer pointer-events-auto" onclick="currentSlide(1)"></span>
                 <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer pointer-events-auto" onclick="currentSlide(2)"></span>
                 <span class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all cursor-pointer pointer-events-auto" onclick="currentSlide(3)"></span>
@@ -216,7 +215,7 @@
 
     </div>
 
-    <!-- FOOTER DENGAN IKON MEDIA SOSIAL -->
+    <!-- FOOTER DENGAN IKON MEDIA SOSIAL & KETENTUAN LAYANAN -->
     <footer class="bg-black text-zinc-500 py-10 px-6 text-center text-xs space-y-4 border-t border-zinc-900">
         <!-- Ikon Media Sosial -->
         <div class="flex justify-center gap-6 text-lg text-zinc-400">
