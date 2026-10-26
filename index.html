@@ -17,7 +17,6 @@
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
-            height: 100vh;
         }
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
@@ -43,16 +42,10 @@
             pointer-events: none;
         }
 
-        /* Pengaturan Presisi Posisi Nama Artis di Layar HP & Laptop */
-        #artist-name-container {
-            position: absolute;
-            z-index: 20;
-            pointer-events: none;
-        }
-
         /* Desktop / Laptop */
         @media (min-width: 769px) {
             html, body {
+                height: 100vh;
                 overflow: hidden;
             }
             #page-home {
@@ -63,37 +56,43 @@
                 overflow: hidden;
             }
             #artist-name-container {
+                position: absolute;
                 left: 32px;
                 top: calc(50% - 56px);
+                z-index: 20;
+                pointer-events: none;
             }
         }
 
-        /* Handphone (Mobile) - Terkunci rapi tanpa scroll, namun lengkap tidak terpotong */
+        /* Handphone (Mobile) - Ukuran proporsional aman tanpa scroll & tidak terpotong */
         @media (max-width: 768px) {
             html, body {
-                overflow: hidden;
+                min-height: 100vh;
+                background-color: #000000;
             }
             #page-home {
-                height: calc(100vh - 56px);
-                position: absolute;
-                inset: 0;
-                top: 56px;
-                overflow: hidden;
-                padding-top: 0.5rem;
-                padding-bottom: 0.75rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: calc(100vh - 56px);
+                padding-top: 4px;
+                padding-bottom: 8px;
             }
             #artist-name-container {
+                position: absolute;
                 left: 10px;
-                top: calc(50% - 42px);
+                top: calc(50% - 38px);
+                z-index: 20;
+                pointer-events: none;
             }
             .artist-img-wrapper {
-                height: 28vh !important;
-                max-width: 170px !important;
+                height: 34vh !important;
+                max-width: 180px !important;
             }
         }
     </style>
 </head>
-<body class="bg-black text-white flex flex-col justify-between h-screen overflow-hidden">
+<body class="bg-black text-white flex flex-col justify-between">
 
     <!-- TOP NAVIGATION -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-3 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900 h-14">
@@ -110,26 +109,26 @@
     </header>
 
     <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
-    <div class="flex-grow pt-14 h-[calc(100vh-56px)] overflow-hidden relative">
+    <div class="flex-grow pt-14 relative">
 
-        <!-- HALAMAN 1: HOME (TERKUNCI PAS DI HP & LAPTOP - TANPA SCROLL) -->
+        <!-- HALAMAN 1: HOME -->
         <main id="page-home" class="page-section active w-full flex-col justify-between items-center bg-black px-4 md:px-12">
             
             <!-- Area Tengah: Foto & Navigasi Slide -->
             <div class="relative w-full flex-grow flex items-center justify-center my-auto">
-                <!-- Nama Artis: Presisi di atas siku panah kiri (<) baik di HP maupun Laptop -->
+                <!-- Nama Artis: Presisi di atas siku panah kiri (<) -->
                 <div id="artist-name-container" class="p-1">
-                    <h1 id="artist-name" class="text-[11px] sm:text-sm md:text-lg font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
+                    <h1 id="artist-name" class="text-xs sm:text-sm md:text-lg font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
                 </div>
 
                 <!-- Tombol Kiri (<) -->
-                <button id="prev-slide" class="absolute left-1 md:left-6 z-20 text-white/70 hover:text-white text-2xl md:text-5xl p-1.5 md:p-2 focus:outline-none transition">
+                <button id="prev-slide" class="absolute left-1 md:left-6 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
                     <i class="fa-solid fa-angle-left"></i>
                 </button>
 
                 <!-- Foto Artis di Tengah dengan Efek Gelap Pekat -->
                 <div class="w-full flex items-center justify-center h-full">
-                    <div class="artist-img-wrapper relative max-w-[200px] sm:max-w-xs md:max-w-sm h-[32vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+                    <div class="artist-img-wrapper relative max-w-xs md:max-w-sm h-[38vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
                         <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group">
                             <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500">
                         </a>
@@ -137,13 +136,13 @@
                 </div>
 
                 <!-- Tombol Kanan (>) -->
-                <button id="next-slide" class="absolute right-1 md:right-6 z-20 text-white/70 hover:text-white text-2xl md:text-5xl p-1.5 md:p-2 focus:outline-none transition">
+                <button id="next-slide" class="absolute right-1 md:right-6 z-20 text-white/70 hover:text-white text-3xl md:text-5xl p-2 focus:outline-none transition">
                     <i class="fa-solid fa-angle-right"></i>
                 </button>
             </div>
 
-            <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas Lengkap (Tampil utuh di HP tanpa scroll) -->
-            <div class="w-full flex flex-col items-center justify-center gap-1 z-20 pb-1">
+            <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas Lengkap -->
+            <div class="w-full flex flex-col items-center justify-center gap-1.5 z-20 pb-2 pt-1">
                 <!-- Indikator Dot -->
                 <div class="flex items-center justify-center gap-1.5">
                     <span class="dot w-1.5 h-1.5 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
@@ -168,7 +167,7 @@
         </main>
 
         <!-- HALAMAN 2: ABOUT (BISA DI-SCROLL) -->
-        <section id="page-about" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-about" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">About Ferwap Music</h2>
@@ -199,7 +198,7 @@
         </section>
 
         <!-- HALAMAN 3: NEWS (BISA DI-SCROLL) -->
-        <section id="page-news" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News</h2>
@@ -224,7 +223,7 @@
         </section>
 
         <!-- HALAMAN 4: ARTISTS (BISA DI-SCROLL) -->
-        <section id="page-artists" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center my-auto pt-8 pb-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Our Artists</h2>
@@ -249,7 +248,7 @@
         </section>
 
         <!-- HALAMAN 5: FAQ (BISA DI-SCROLL) -->
-        <section id="page-faq" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
@@ -299,7 +298,7 @@
         </section>
 
         <!-- HALAMAN 6: PRIVACY POLICY (BISA DI-SCROLL) -->
-        <section id="page-privacy" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-privacy" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
@@ -332,7 +331,7 @@
         </section>
 
         <!-- HALAMAN 7: TERMS OF SERVICE (BISA DI-SCROLL) -->
-        <section id="page-terms" class="page-section absolute inset-0 w-full h-full flex-col justify-between px-6 md:px-12 py-10 bg-black overflow-y-auto">
+        <section id="page-terms" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black min-h-[calc(100vh-56px)]">
             <div class="max-w-3xl mx-auto space-y-4 text-center pt-8">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
