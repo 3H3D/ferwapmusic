@@ -10,14 +10,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        body {
             background-color: #000000;
             color: #ffffff;
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
-            height: 100vh;
         }
         h1, h2, h3 {
             font-family: 'Space Grotesk', sans-serif;
@@ -27,7 +26,7 @@
             display: none;
         }
         .page-section.active {
-            display: flex;
+            display: block;
         }
 
         /* Gradasi hitam super pekat melingkar untuk menghilangkan sudut foto */
@@ -44,7 +43,7 @@
         }
     </style>
 </head>
-<body class="bg-black text-white flex flex-col justify-between h-screen overflow-hidden">
+<body class="bg-black text-white min-h-screen flex flex-col justify-between">
 
     <!-- TOP NAVIGATION -->
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-4 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900 h-16">
@@ -60,13 +59,14 @@
         </nav>
     </header>
 
-    <!-- KONTEN UTAMA YANG BERPINDAH (SINGLE PAGE VIEW) -->
-    <div class="flex-grow pt-16 h-[calc(100vh-128px)] overflow-y-auto">
+    <!-- KONTEN UTAMA -->
+    <div class="flex-grow pt-16">
 
-        <!-- HALAMAN 1: HOME (TERKUNCI PAS TANPA SCROLL) -->
-        <main id="page-home" class="page-section active relative w-full h-full flex-col justify-center items-center bg-black px-4 md:px-12">
+        <!-- HALAMAN 1: HOME (TERKUNCI PAS SETINGGI LAYAR - TANPA SCROLL) -->
+        <main id="page-home" class="page-section active relative w-full h-[calc(100vh-64px)] overflow-hidden flex flex-col justify-between items-center bg-black px-4 md:px-12 pb-3">
             
-            <div class="relative w-full flex items-center justify-center">
+            <!-- Area Tengah: Foto & Navigasi Slide -->
+            <div class="relative w-full flex-grow flex items-center justify-center">
                 <!-- Nama Artis: Huruf '3' Pertama Tepat Lurus di Atas Siku Panah Kiri (<) -->
                 <div class="absolute left-2 md:left-8 top-[calc(50%-42px)] md:top-[calc(50%-50px)] z-20 pointer-events-none p-2">
                     <h1 id="artist-name" class="text-base sm:text-lg md:text-xl font-bold tracking-widest text-white/90 uppercase drop-shadow-lg text-left leading-none">3H3D</h1>
@@ -78,7 +78,7 @@
                 </button>
 
                 <!-- Foto Artis di Tengah dengan Efek Gelap Pekat -->
-                <div class="w-full flex items-center justify-center">
+                <div class="w-full flex items-center justify-center h-full">
                     <div class="artist-img-wrapper relative max-w-sm md:max-w-md h-[46vh] md:h-[56vh] flex items-center justify-center overflow-hidden">
                         <a id="artist-link" href="https://3h3dofficial.web.id" target="_blank" class="w-full h-full block cursor-pointer group">
                             <img id="banner-image" src="3H3D.jpeg" alt="Featured Artist" class="w-full h-full object-contain object-center filter brightness-90 group-hover:brightness-100 transition duration-500">
@@ -92,17 +92,33 @@
                 </button>
             </div>
 
-            <!-- Indikator Dot -->
-            <div class="absolute bottom-4 flex items-center justify-center gap-3 w-full z-20">
-                <span class="dot w-2 h-2 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
-                <span class="dot w-2 h-2 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(2)"></span>
-                <span class="dot w-2 h-2 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(3)"></span>
+            <!-- Area Bawah Halaman Home: Indikator Dot + Footer Ringkas -->
+            <div class="w-full flex flex-col items-center justify-center gap-2 z-20">
+                <!-- Indikator Dot -->
+                <div class="flex items-center justify-center gap-3">
+                    <span class="dot w-2 h-2 rounded-full bg-red-600 transition-all cursor-pointer" onclick="currentSlide(1)"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(2)"></span>
+                    <span class="dot w-2 h-2 rounded-full bg-white/40 transition-all cursor-pointer" onclick="currentSlide(3)"></span>
+                </div>
+
+                <div class="flex justify-center gap-5 text-sm text-zinc-400 pt-1">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+
+                <p class="text-[10px] text-zinc-500 text-center">&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</p>
+                
+                <div class="flex justify-center gap-4 text-[10px] text-zinc-400 pb-1">
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
             </div>
         </main>
 
-        <!-- HALAMAN 2: ABOUT -->
-        <section id="page-about" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center">
+        <!-- HALAMAN 2: ABOUT (BISA DI-SCROLL) -->
+        <section id="page-about" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Corporate Profile</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">About Ferwap Music</h2>
                 <p class="text-zinc-300 text-sm md:text-base leading-relaxed font-light">
@@ -115,32 +131,75 @@
                     Our mission is to foster meaningful collaborations among independent producers, songwriters, and vocalists while curating a distinct sound identity across diverse contemporary genres.
                 </p>
             </div>
+            <!-- Footer khusus halaman lain agar ikut ter-scroll di bawah -->
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
-        <!-- HALAMAN 3: NEWS -->
-        <section id="page-news" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center">
+        <!-- HALAMAN 3: NEWS (BISA DI-SCROLL) -->
+        <section id="page-news" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Updates & Press</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News</h2>
                 <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
                     Ikuti informasi terbaru, pengumuman rilisan lagu, dan pembaruan seputar aktivitas label di sini.
                 </p>
             </div>
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
-        <!-- HALAMAN 4: ARTISTS -->
-        <section id="page-artists" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center">
+        <!-- HALAMAN 4: ARTISTS (BISA DI-SCROLL) -->
+        <section id="page-artists" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
+            <div class="max-w-3xl mx-auto space-y-4 text-center my-auto">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Roster</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Our Artists</h2>
                 <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
                     Jelajahi daftar talenta dan seniman independen di naungan Ferwap Music Entertainment.
                 </p>
             </div>
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
-        <!-- HALAMAN 5: FAQ -->
-        <section id="page-faq" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
+        <!-- HALAMAN 5: FAQ (BISA DI-SCROLL) -->
+        <section id="page-faq" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
             <div class="max-w-3xl mx-auto space-y-4 text-center">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Questions</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
@@ -173,14 +232,28 @@
                     </div>
                 </div>
             </div>
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
-        <!-- HALAMAN 6: PRIVACY POLICY -->
-        <section id="page-privacy" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
+        <!-- HALAMAN 6: PRIVACY POLICY (BISA DI-SCROLL) -->
+        <section id="page-privacy" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
             <div class="max-w-3xl mx-auto space-y-4 text-center">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
-                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left">
+                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
                     <p>
                         Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists. This Privacy Policy outlines how we collect, use, and safeguard your information:
                     </p>
@@ -192,14 +265,28 @@
                     </ul>
                 </div>
             </div>
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
-        <!-- HALAMAN 7: TERMS OF SERVICE -->
-        <section id="page-terms" class="page-section min-h-full items-center justify-center px-6 md:px-12 py-12 bg-black">
+        <!-- HALAMAN 7: TERMS OF SERVICE (BISA DI-SCROLL) -->
+        <section id="page-terms" class="page-section min-h-[calc(100vh-64px)] flex flex-col justify-between px-6 md:px-12 py-16 bg-black">
             <div class="max-w-3xl mx-auto space-y-4 text-center">
                 <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Legal</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
-                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left">
+                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
                     <p>
                         Welcome to the official website of Ferwap Music Entertainment. By accessing and using this website, you acknowledge that you have read, understood, and agreed to be bound by the following Terms of Service:
                     </p>
@@ -212,25 +299,23 @@
                     </ul>
                 </div>
             </div>
+            <footer class="w-full bg-black border-t border-zinc-900 py-6 px-6 flex flex-col items-center justify-center gap-2 mt-16">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
         </section>
 
     </div>
-
-    <!-- GLOBAL FOOTER (IKON SOSIAL MEDIA & KETENTUAN LAYANAN MUNCUL DI SEMUA HALAMAN) -->
-    <footer class="w-full fixed bottom-0 left-0 z-50 bg-black border-t border-zinc-900 py-3 px-6 flex flex-col items-center justify-center gap-1.5 h-16">
-        <div class="flex justify-center gap-5 text-sm text-zinc-400">
-            <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <div class="flex items-center gap-3 text-[10px] text-zinc-500">
-            <span>&copy; 2026 Ferwap Music Entertainment.</span>
-            <span class="text-zinc-700">|</span>
-            <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
-            <span class="text-zinc-700">|</span>
-            <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
-        </div>
-    </footer>
 
     <!-- SCRIPT PISAH HALAMAN & SLIDER -->
     <script>
@@ -245,10 +330,7 @@
             if(target) {
                 target.classList.add('active');
             }
-            const scrollContainer = document.querySelector('.flex-grow');
-            if(scrollContainer) {
-                scrollContainer.scrollTo(0, 0);
-            }
+            window.scrollTo(0, 0); // Kembalikan posisi scroll ke atas
         }
 
         // Script Slider Banner Utama (Hanya Nama Artis & Gambar)
