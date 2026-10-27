@@ -29,12 +29,12 @@
     border-bottom: none !important;
     box-shadow: none !important;
 }
-/* Menghilangkan border secara mutlak pada seluruh elemen dropdown di dalam header */
+/* Memaksa menghilangkan border dan garis siku pada kotak dropdown */
 header .absolute, 
-header div[class*="absolute"], 
-header div[class*="border"] {
+header div[class*="absolute"] {
     border: none !important;
     border-width: 0 !important;
+    outline: none !important;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
 }
         
