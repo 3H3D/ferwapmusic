@@ -16,16 +16,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
-       header {
-    border-bottom: none !important;
-    box-shadow: none !important;
-}
-/* Menyamakan warna border dropdown agar tidak terlihat */
-header div[class*="absolute"] {
-    border-color: #09090b !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8) !important;
-}
-        
+        html, body {
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        header {
+            border-bottom: none !important;
+            box-shadow: none !important;
+        }
+        /* Menghilangkan border secara mutlak pada seluruh elemen dropdown di dalam header */
+        header div[class*="absolute"] {
+            border: none !important;
+            border-width: 0 !important;
+            outline: none !important;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8) !important;
+        }
         
         /* Pengaturan Animasi Global */
         @keyframes fadeInUp {
@@ -124,7 +134,7 @@ header div[class*="absolute"] {
                     About <i class="fa-solid fa-chevron-down text-[9px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 
-                    <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
+                <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
                     <button onclick="switchPage('artists')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Featured Artists</button>
                     <button onclick="switchPage('about')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Labels & Content Divisions</button>
                     <button onclick="switchPage('executive')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Executives</button>
@@ -312,11 +322,10 @@ header div[class*="absolute"] {
                     </div>
                 </div>
 
-                <!-- BAGIAN 2: DISCOGRAPHY & CATALOG (SELURUH LAGU DARI MUSICBRAINZ) -->
+                <!-- BAGIAN 2: DISCOGRAPHY & CATALOG -->
                 <div id="news-discography" class="pt-6 border-t border-zinc-900">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         
-                        <!-- KOLOM KIRI: DAFTAR KESELURUHAN LAGU -->
                         <div class="lg:col-span-2 space-y-4">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-xl font-bold text-amber-500 uppercase tracking-wider">Discography & Catalog</h3>
@@ -438,123 +447,6 @@ header div[class*="absolute"] {
                                     </a>
                                     <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2022-09-15</p>
                                 </div>
-                                <!-- 15 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=acjp11UXUeA" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">15.</span> 
-                                        <span class="group-hover:underline">Og Wesa</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
-                                </div>
-                                <!-- 16 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=9KPC68J9K0o" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">16.</span> 
-                                        <span class="group-hover:underline">Airetie</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-06</p>
-                                </div>
-                                <!-- 17 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=TfMPo1Ux_vg" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">17.</span> 
-                                        <span class="group-hover:underline">Are Are Firiwa</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-21</p>
-                                </div>
-                                <!-- 18 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=_CLrxKrrow8" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">18.</span> 
-                                        <span class="group-hover:underline">Are Firiwa</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-23</p>
-                                </div>
-                                <!-- 19 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=Ya8Vrke2auE" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">19.</span> 
-                                        <span class="group-hover:underline">Ture Ture</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson,Hafy & Demaz &bull; Single &bull; 2024-02-17</p>
-                                </div>
-                                <!-- 20 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=XmeEC-T8Ayg" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">20.</span> 
-                                        <span class="group-hover:underline">Afraya Empa</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
-                                </div>
-                                <!-- 21 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=TcomjCmutbA" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">21.</span> 
-                                        <span class="group-hover:underline">Awahaiyabu Sariwaraibio</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
-                                </div>
-                                <!-- 22 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=QG-mn9xZYPA" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">22.</span> 
-                                        <span class="group-hover:underline">Yesus Dierorie</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
-                                </div>
-                                <!-- 23 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=wMcBFxaOxqk" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">23.</span> 
-                                        <span class="group-hover:underline">Oraig We</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson & Wariz &bull; Single &bull; 2025-03-10</p>
-                                </div>
-                                <!-- 24 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=1smck93Sy90" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">24.</span> 
-                                        <span class="group-hover:underline">Ise Tugue</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-03-11</p>
-                                </div>
-                                <!-- 25 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=Y8cFFRtLX9s" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">25.</span> 
-                                        <span class="group-hover:underline">Dori</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-11-16</p>
-                                </div>
-                                <!-- 26 -->
-                                <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=mCGxyCWwBBA" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">26.</span> 
-                                        <span class="group-hover:underline">Fiaki</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-11-16</p>
-                                </div>
-                                <!-- 27 -->
-                                <div class="pb-2">
-                                    <a href="https://www.youtube.com/watch?v=eMkDO4twBqE" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
-                                        <span class="text-amber-600 font-mono text-xs">27.</span> 
-                                        <span class="group-hover:underline">Toteko</span>
-                                    </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2026-06-27</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- KOLOM KANAN: KOTAK CATATAN (BAHASA INGGRIS) -->
-                        <div class="lg:col-span-1 space-y-8 max-w-[320px] mx-auto lg:mx-0">
-                            <div class="bg-zinc-900 border border-zinc-800 rounded p-6 text-center space-y-4">
-                                <h3 class="text-xl font-bold text-amber-500">Catalog & Licensing Note</h3>
-                                <p class="text-xs text-zinc-300 leading-relaxed">
-                                    All master tracks and publishing rights are independently managed under Ferwap Music Entertainment. For custom sync licensing or professional inquiries, visit our FAQ section.
-                                </p>
-                                <button onclick="switchPage('faq')" class="w-full py-2.5 bg-amber-800 hover:bg-amber-700 text-white font-bold text-xs uppercase tracking-wider rounded transition duration-300">
-                                    View Our FAQs &raquo;
-                                </button>
                             </div>
                         </div>
 
@@ -579,129 +471,76 @@ header div[class*="absolute"] {
             </footer>
         </section>
 
-        <!-- HALAMAN 4: FEATURED ARTISTS -->
+        <!-- HALAMAN 4: ARTISTS -->
         <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Featured Artists</h2>
+            <div class="max-w-6xl mx-auto space-y-8 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
+                <div class="space-y-1">
+                    <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Roster</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Artists</h2>
+                    <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                        Discover the brilliant independent singer-songwriters, music producers, and audio engineers under Ferwap Music Entertainment.
+                    </p>
                 </div>
 
-                <div class="flex flex-wrap gap-4 items-start">
-                    
-                    <!-- Artist 1: 3H3D -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
-                        <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-2">
+                    <!-- 3H3D -->
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden shadow-lg brown-card group">
+                        <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </a>
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">3H3D</h3>
-                            <a href="https://3h3dofficial.web.id" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">3H3D Official Site</a>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <h3 class="text-lg font-bold text-white">3H3D</h3>
+                            <p class="text-xs text-amber-500 font-medium">Solo Artist, Singer, Songwriter, Music Producer & Audio Engineer</p>
+                            <a href="https://3h3dofficial.web.id" target="_blank" class="inline-block pt-1 text-xs text-amber-400 hover:underline">Official Profile &raquo;</a>
                         </div>
                     </div>
-
-                    <!-- Artist 2: ANDER -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
-                        <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </a>
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">ANDER</h3>
-                            <a href="https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">ANDER Official Site</a>
-                        </div>
-                    </div>
-                    
-                     <!-- Artist 3: Ferrson -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
-                        <a href="https://www.youtube.com/channel/UCmv2t88fsCPT90PTbcH7d2A" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="Ferrson.F.jpeg" alt="Ferrson" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </a>
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">Ferrson</h3>
-                            <a href="https://www.youtube.com/channel/UCmv2t88fsCPT90PTbcH7d2A" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">Ferrson Official Site</a>
-                        </div>
-                    </div>
-                    </div>
-                
-                    <!-- Artist 5: Brecko -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
-                        <a href="https://open.spotify.com/artist/2kwHdbFRFN07ZfCZMp456l" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
-                            <img src="Brecko.jpeg" alt="Brecko" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
-                        </a>
-                        <div class="bg-amber-900 p-4 text-center">
-                            <h3 class="text-lg font-bold text-white leading-snug">Brecko</h3>
-                            <a href="https://open.spotify.com/artist/2kwHdbFRFN07ZfCZMp456l" target="_blank" class="text-xs text-amber-200 hover:text-white hover:underline font-medium transition inline-block mt-0.5">Brecko Official Site</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-    
-        <!-- HALAMAN 5: FAQ & DEMO SUBMISSIONS -->
+
+            <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
+                <div class="flex justify-center gap-5 text-sm text-zinc-400">
+                    <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:ferwapmusic.info@gmail.com" class="hover:text-amber-400 transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <div class="flex items-center gap-3 text-xs text-zinc-500">
+                    <span>&copy; 2026 Ferwap Music Entertainment. All Rights Reserved.</span>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('privacy')" class="hover:text-white transition focus:outline-none">Privacy Policy</button>
+                    <span class="text-zinc-700">|</span>
+                    <button onclick="switchPage('terms')" class="hover:text-white transition focus:outline-none">Terms of Service</button>
+                </div>
+            </footer>
+        </section>
+
+        <!-- HALAMAN 5: FAQ -->
         <section id="page-faq" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-8 text-center pt-8 pb-12 animate-fade-in">
-                <div>
-                    <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">A&R & Support</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-1">Frequently Asked Questions</h2>
+            <div class="max-w-4xl mx-auto space-y-8 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
+                <div class="space-y-1">
+                    <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Support & Info</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
+                    <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
+                        Find answers to common inquiries regarding our music catalog, submissions, and contact channels.
+                    </p>
                 </div>
 
-                <!-- KONTEN DEMO SUBMISSION -->
-                <div class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
-                    <div class="border-b border-zinc-900 pb-4 text-center">
-                        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Submissions</span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Demo Submission</h2>
-                    </div>
-                    <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
-                        <p>
-                            Ferwapmusic is constantly seeking innovative, passionate, and visionary talent to join our independent roster. Whether you are an emerging artist, vocalist, or music producer, we provide a collaborative space to develop your catalog and refine your sound.
-                        </p>
-                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">Submission Guidelines:</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>Format:</strong> We only accept private streaming links (SoundCloud, Google Drive, or Dropbox). Please do not attach raw MP3/WAV files directly via email, as those messages will be automatically filtered out.</li>
-                            <li><strong>Track Selection:</strong> Send 2 to 3 of your best unreleased tracks. Make sure your audio links are set to accessible permissions (with stream enabled).</li>
-                            <li><strong>Metadata & Info:</strong> Include your official artist name, a short biography, active social media links, and clear contact information.</li>
-                        </ul>
-                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">What We Look For:</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Originality and a strong artistic identity.</li>
-                            <li>Solid songwriting, production potential, and high-quality arrangements.</li>
-                            <li>Dedication to long-term catalog development and strategic collaboration.</li>
-                        </ul>
-                        <p class="pt-2">
-                            Due to the high volume of submissions, our A&R team manually reviews every entry. If your music fits our upcoming projects or roster strategy, we will reach out to you within 2–3 weeks via <a href="mailto:ferwapmusic.info@gmail.com" class="underline text-amber-400 font-medium hover:text-amber-300 transition">ferwapmusic.info@gmail.com</a>.
+                <div class="space-y-4 pt-2">
+                    <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-lg space-y-2">
+                        <h3 class="text-base font-bold text-amber-400">How can I contact Ferwap Music Entertainment?</h3>
+                        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
+                            You can reach us directly via email at <a href="mailto:ferwapmusic.info@gmail.com" class="text-amber-400 underline">ferwapmusic.info@gmail.com</a> or through our official social media channels on Facebook and Instagram.
                         </p>
                     </div>
-                </div>
 
-                <!-- KONTEN MUSIC LICENSING -->
-                <div id="home-licensing" class="space-y-6 text-sm md:text-base pt-6 border-t border-zinc-900 text-left">
-                    <div class="border-b border-zinc-900 pb-4 text-center">
-                        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Commercial Services</span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-white mt-1">Music Licensing</h2>
-                    </div>
-                    <div class="space-y-4 text-zinc-300 leading-relaxed font-light">
-                        <p>
-                            Ferwap Music Entertainment manages an independent catalog of original recordings and compositions tailored for sync licensing across worldwide media platforms. We partner with content creators, film directors, game developers, advertising agencies, and production houses seeking unique audio branding and background scores.
-                        </p>
-                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">Our Licensing Services:</h3>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li><strong>Synchronization Rights:</strong> Master and publishing clearance for film, television, documentaries, video games, and commercial advertisements.</li>
-                            <li><strong>Custom Audio Production:</strong> Original sound design, mix engineering, and bespoke track production customized to meet project-specific briefs.</li>
-                            <li><strong>Digital Media & Branded Content:</strong> Pre-cleared music assets for digital campaigns, social media content, and corporate videos.</li>
-                        </ul>
-                        <h3 class="font-bold text-white uppercase text-xs tracking-wider pt-2">How to Request a License:</h3>
-                        <p>To request a master and publishing license for any track in our catalog, please provide the following details in your inquiry:</p>
-                        <ul class="list-disc pl-5 space-y-2">
-                            <li>Project title and brief description (e.g., commercial, short film, game).</li>
-                            <li>Specific track title(s) requested.</li>
-                            <li>Media format and distribution territory (e.g., Worldwide, North America, Online/Social Media).</li>
-                            <li>Term/Duration of the license and your estimated budget.</li>
-                        </ul>
-                        <p class="pt-2">
-                            For all licensing inquiries, master clearance requests, or custom audio production briefs, please contact our rights management team directly at <a href="https://docs.google.com/forms/d/e/1FAIpQLSdbYKWGxVxConGT_ZM7iNHtU_khpwcnkkauiSij5mD1BbqOxg/viewform?usp=publish-editor" class="underline text-amber-400 font-medium hover:text-amber-300 transition">licensing@ferwapmusic.com</a>.
+                    <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-lg space-y-2">
+                        <h3 class="text-base font-bold text-amber-400">What services does Ferwap Music provide?</h3>
+                        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
+                            We operate as an independent record label focusing on original songwriting, vocal recording, professional audio mixing & mastering, digital metadata management, and worldwide release distribution.
                         </p>
                     </div>
                 </div>
             </div>
+
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
@@ -720,21 +559,13 @@ header div[class*="absolute"] {
 
         <!-- HALAMAN 6: PRIVACY POLICY -->
         <section id="page-privacy" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
-                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Legal</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h2>
-                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
-                    <p>
-                        Ferwap Music Entertainment is fully committed to protecting the privacy and security of personal data provided by our website visitors, business partners, and artists. This Privacy Policy outlines how we collect, use, and safeguard your information:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Data Collection:</strong> We collect personal information that you voluntarily provide when completing demo submission forms, subscribing to our newsletter, or reaching out via our contact channels. This data may include your full name, email address, portfolio/music links, and contact details.</li>
-                        <li><strong>Use of Information:</strong> Collected information is used strictly for professional communication, A&R demo evaluations, audio licensing processing, service updates, and improving overall user experience on our platform.</li>
-                        <li><strong>Data Security & Protection:</strong> We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, disclosure, alteration, or destruction. We do not sell, rent, or trade your personal information to third parties without your explicit consent, unless required by law.</li>
-                        <li><strong>User Rights:</strong> You reserve the right to request access to, correction of, or deletion of your personal data stored in our systems at any time by contacting our support team through our official channels.</li>
-                    </ul>
-                </div>
+            <div class="max-w-3xl mx-auto space-y-6 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
+                <h2 class="text-3xl font-bold text-white">Privacy Policy</h2>
+                <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
+                    Ferwap Music Entertainment respects your privacy. This website is designed to showcase our official artist catalog, corporate profile, and release history without tracking unrequested personal data. Any correspondence sent via email is kept strictly confidential.
+                </p>
             </div>
+
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
@@ -753,22 +584,13 @@ header div[class*="absolute"] {
 
         <!-- HALAMAN 7: TERMS OF SERVICE -->
         <section id="page-terms" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
-            <div class="max-w-3xl mx-auto space-y-4 text-center pt-8 pb-12 animate-fade-in">
-                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Legal</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Terms of Service</h2>
-                <div class="space-y-4 text-zinc-300 leading-relaxed font-light text-left pt-4">
-                    <p>
-                        Welcome to the official website of Ferwap Music Entertainment. By accessing and using this website, you acknowledge that you have read, understood, and agreed to be bound by the following Terms of Service:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Site Usage:</strong> You agree to use this site solely for lawful purposes and in a manner that does not infringe upon the rights of, or restrict or inhibit the use and enjoyment of this site by, any third party.</li>
-                        <li><strong>Demo Submissions:</strong> Submitting music tracks, demo materials, or audio proposals through this website does not automatically establish a contractual relationship, financial obligation, or publishing commitment on behalf of Ferwap Music Entertainment. We reserve the right to review or decline any submitted material at our sole discretion.</li>
-                        <li><strong>Third-Party Links:</strong> This site may contain links to external platforms, including music streaming services (Spotify, SoundCloud, YouTube) and social media channels. Ferwap Music Entertainment assumes no responsibility for the content, privacy policies, or practices of any third-party sites.</li>
-                        <li><strong>Limitation of Liability:</strong> While Ferwap Music Entertainment strives to ensure all information on this site is accurate and up to date, we do not guarantee uninterrupted, error-free, or virus-free operation. Your use of this website is entirely at your own risk.</li>
-                        <li><strong>Modifications to Terms:</strong> We reserve the right to update or modify these Terms of Service at any time without prior notice. Any changes will become effective immediately upon being posted on this page.</li>
-                    </ul>
-                </div>
+            <div class="max-w-3xl mx-auto space-y-6 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
+                <h2 class="text-3xl font-bold text-white">Terms of Service</h2>
+                <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
+                    All audio recordings, visual assets, brand logos, and textual descriptions published on ferwap.com are protected under copyright law and owned by Ferwap Music Entertainment and respective recording artists. Unauthorized commercial duplication or distribution is prohibited.
+                </p>
             </div>
+
             <footer class="w-full bg-black border-t border-zinc-900 py-4 px-6 flex flex-col items-center justify-center gap-1.5 mt-auto">
                 <div class="flex justify-center gap-5 text-sm text-zinc-400">
                     <a href="https://www.facebook.com/ferwapmusic" target="_blank" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook-f"></i></a>
@@ -787,14 +609,56 @@ header div[class*="absolute"] {
 
     </div>
 
-    <!-- SCRIPT PISAH HALAMAN & SLIDER -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        function switchPage(pageName) {
+        const slides = [
+            { name: "3H3D", img: "3H3D.jpeg", link: "https://3h3dofficial.web.id" },
+            { name: "ANDER", img: "ANDER.jpeg", link: "#" },
+            { name: "Brecko", img: "Brecko.jpeg", link: "#" },
+            { name: "Ferrson", img: "Ferrson.jpeg", link: "#" }
+        ];
+        let currentSlideIndex = 0;
+
+        function updateSlide(index) {
+            currentSlideIndex = index;
+            const slide = slides[index];
+            document.getElementById("artist-name").innerText = slide.name;
+            document.getElementById("banner-image").src = slide.img;
+            document.getElementById("banner-image").alt = slide.name;
+            document.getElementById("artist-link").href = slide.link;
+
+            const dots = document.querySelectorAll(".dot");
+            dots.forEach((dot, idx) => {
+                if (idx === index) {
+                    dot.classList.remove("bg-white/40");
+                    dot.classList.add("bg-amber-600");
+                } else {
+                    dot.classList.remove("bg-amber-600");
+                    dot.classList.add("bg-white/40");
+                }
+            });
+        }
+
+        document.getElementById("next-slide").addEventListener("click", () => {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateSlide(currentSlideIndex);
+        });
+
+        document.getElementById("prev-slide").addEventListener("click", () => {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateSlide(currentSlideIndex);
+        });
+
+        function currentSlide(num) {
+            updateSlide(num - 1);
+        }
+
+        function switchPage(pageId) {
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
-
-            const target = document.getElementById('page-' + pageName);
-            if(target) {
+            
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
                 target.classList.add('active');
                 window.scrollTo(0, 0);
             }
@@ -804,69 +668,10 @@ header div[class*="absolute"] {
             switchPage('news');
             setTimeout(() => {
                 const el = document.getElementById(sectionId);
-                if(el) {
+                if (el) {
                     el.scrollIntoView({ behavior: 'smooth' });
                 }
             }, 100);
-        }
-
-        const slides = [
-            {
-                name: "3H3D",
-                image: "3H3D.jpeg",
-                link: "https://3h3dofficial.web.id"
-            },
-            {
-                name: "ANDER",
-                image: "ANDER.jpg",
-                link: "https://open.spotify.com/artist/4M9kCzOOtJrz94ZlqyiZ5g"
-            },
-            {
-                name: "Ferrson",
-                image: "Ferrson.F.jpeg",
-                link: "https://www.youtube.com/channel/UCmv2t88fsCPT90PTbcH7d2A"
-            },
-            {
-                name: "Brecko",
-                image: "Brecko.jpeg",
-                link: "https://open.spotify.com/artist/2kwHdbFRFN07ZfCZMp456l"
-            }
-        ];
-
-        let currentIndex = 0;
-        const nameEl = document.getElementById('artist-name');
-        const linkEl = document.getElementById('artist-link');
-        const bannerImg = document.getElementById('banner-image');
-
-        function updateSlide(index) {
-            nameEl.innerHTML = slides[index].name;
-            linkEl.href = slides[index].link;
-            bannerImg.src = slides[index].image;
-            
-            document.querySelectorAll('.dot').forEach((dot, idx) => {
-                if(idx === index) {
-                    dot.classList.remove('bg-white/40');
-                    dot.classList.add('bg-amber-600');
-                } else {
-                    dot.classList.remove('bg-amber-600');
-                    dot.classList.add('bg-white/40');
-                }
-            });
-        }
-
-        document.getElementById('next-slide').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlide(currentIndex);
-        });
-
-        document.getElementById('prev-slide').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlide(currentIndex);
-        });
-
-        function currentSlide(n) {
-            currentIndex = n - 1;
-            updateSlide(currentIndex);
         }
     </script>
 </body>
