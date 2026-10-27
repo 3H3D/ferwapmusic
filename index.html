@@ -25,13 +25,15 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        header {
-        border-bottom: none !important;
-        box-shadow: none !important;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+       header {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+header div[class*="absolute"] {
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
         
         /* Pengaturan Animasi Global */
         @keyframes fadeInUp {
