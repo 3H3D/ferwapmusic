@@ -136,15 +136,15 @@
                 </div>
             </div>
 
-            <!-- DROPDOWN NEWS (HANYA BERITA & DISCOGRAPHY) -->
+            <!-- DROPDOWN NEWS (HANYA 2: NEWS & DISCOGRAPHY) -->
             <div class="relative group h-14 flex items-center">
                 <button onclick="switchPage('news')" class="px-3 py-1.5 rounded transition text-zinc-300 group-hover:text-amber-400 group-hover:bg-zinc-900/80 flex items-center gap-1 focus:outline-none">
                     News <i class="fa-solid fa-chevron-down text-[9px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 
                 <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 border border-amber-900/40 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
-                    <button onclick="scrollToSection('news-releases')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Recent Releases & News</button>
-                    <button onclick="scrollToSection('news-discography')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">Discography & Catalog</button>
+                    <button onclick="scrollToSection('news-releases')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">1. News & Press</button>
+                    <button onclick="scrollToSection('news-discography')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">2. Discography & Catalog</button>
                 </div>
             </div>
 
@@ -286,58 +286,45 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 3: NEWS & DISCOGRAPHY (DENGAN LAYOUT CATATAN DI SEBELAH KANAN) -->
+        <!-- HALAMAN 3: NEWS & DISCOGRAPHY -->
         <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
             <div class="max-w-6xl mx-auto space-y-10 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
                 
-                <!-- BAGIAN 1: LATEST NEWS / RILIS TERBARU -->
+                <!-- BAGIAN 1: NEWS & PRESS (BERSIH TANPA FOTO ARTIS) -->
                 <div id="news-releases" class="space-y-4">
                     <div class="text-center space-y-1">
                         <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Updates & Press</span>
                         <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News & Recent Releases</h2>
                         <p class="text-zinc-400 text-sm md:text-base leading-relaxed font-light">
-                            Ikuti informasi pengumuman rilisan lagu terbaru dan pembaruan seputar aktivitas label.
+                            Stay updated with our latest independent releases, label announcements, and project updates.
                         </p>
                     </div>
 
-                    <!-- Kartu Pengumuman Rilis Terbaru -->
-                    <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="group block bg-zinc-900/90 border border-amber-900/40 hover:border-amber-600/70 p-5 md:p-6 rounded-lg transition duration-300 shadow-lg max-w-4xl mx-auto">
-                        <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
-                            <div class="w-20 h-20 md:w-24 md:h-24 rounded bg-zinc-800 overflow-hidden flex-shrink-0 relative border border-amber-900/30">
-                                <img src="3H3D.jpeg" alt="Latest Release Cover" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                    <i class="fa-brands fa-youtube text-amber-400 text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="flex-grow space-y-1.5">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-[9px] bg-amber-600 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">New Single Announcement</span>
-                                    <span class="text-[10px] text-zinc-400">Ferwap Music &bull; 2026</span>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-amber-400 transition flex items-center gap-2">
-                                    Official Music Release by 3H3D
-                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
-                                </h3>
-                                <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
-                                    Dengarkan karya musik terbaru dari 3H3D yang diproduksi secara independen di bawah naungan Ferwap Music Entertainment. Klik untuk langsung memutar videonya di YouTube.
-                                </p>
-                            </div>
+                    <!-- Kartu Berita / Rilis Terbaru (Murni Teks Berita & Pengumuman) -->
+                    <div class="bg-zinc-900/90 border border-amber-900/40 p-6 rounded-lg space-y-3 max-w-4xl mx-auto shadow-lg">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[9px] bg-amber-600 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">Official Announcement</span>
+                            <span class="text-[10px] text-zinc-400">Ferwap Music &bull; 2026</span>
                         </div>
-                    </a>
+                        <h3 class="text-lg md:text-xl font-bold text-white">Expanding Independent Music Horizons</h3>
+                        <p class="text-xs md:text-sm text-zinc-300 leading-relaxed font-light">
+                            Ferwap Music Entertainment continues to empower visionary independent creators through dedicated audio engineering and global distribution standards. Explore our complete catalog below to discover fresh original releases and upcoming artist projects.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- BAGIAN 2: DISCOGRAPHY & KATALOG LAGU (DENGAN KOTAK CATATAN DI SEBELAH KANAN) -->
+                <!-- BAGIAN 2: DISCOGRAPHY & CATALOG -->
                 <div id="news-discography" class="pt-6 border-t border-zinc-900">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         
-                        <!-- KOLOM KIRI (2 Kolom): DAFTAR LAGU BERUPA TEKS BIASA -->
+                        <!-- KOLOM KIRI: DAFTAR LAGU (TEKS BIASA, KLIK KE YOUTUBE) -->
                         <div class="lg:col-span-2 space-y-4">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-xl font-bold text-amber-500 uppercase tracking-wider">Discography & Catalog</h3>
                             </div>
-                            <!-- Catatan Teks Biasa Tanpa Link di Atas Judul Lagu -->
+                            <!-- Catatan Teks Biasa Tanpa Link -->
                             <p class="text-xs text-zinc-400 font-light">
-                                Daftar seluruh rilisan resmi dan katalog musik independen Ferwap Music Entertainment.
+                                Explore the official discography and independent music catalog from Ferwap Music Entertainment.
                             </p>
 
                             <div class="space-y-3 pt-2">
@@ -346,7 +333,6 @@
                                     <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">01.</span> 
                                         <span class="group-hover:underline">3H3D - Track Release 1</span>
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
                                     </a>
                                     <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
                                 </div>
@@ -356,7 +342,6 @@
                                     <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">02.</span> 
                                         <span class="group-hover:underline">3H3D - Track Release 2</span>
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
                                     </a>
                                     <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
                                 </div>
@@ -366,7 +351,6 @@
                                     <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">03.</span> 
                                         <span class="group-hover:underline">3H3D - Track Release 3</span>
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
                                     </a>
                                     <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
                                 </div>
@@ -376,14 +360,13 @@
                                     <a href="https://www.youtube.com/results?search_query=3H3D+music" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">04.</span> 
                                         <span class="group-hover:underline">3H3D - Track Release 4</span>
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i>
                                     </a>
                                     <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- KOLOM KANAN: KOTAK CATATAN (MIRIP HALAMAN EXECUTIVES) -->
+                        <!-- KOLOM KANAN: KOTAK CATATAN (BAHASA INGGRIS) -->
                         <div class="lg:col-span-1 space-y-8 max-w-[320px] mx-auto lg:mx-0">
                             <div class="bg-zinc-900 border border-zinc-800 rounded p-6 text-center space-y-4">
                                 <h3 class="text-xl font-bold text-amber-500">Catalog & Licensing Note</h3>
