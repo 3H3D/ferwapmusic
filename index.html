@@ -116,7 +116,8 @@
     <header class="w-full fixed top-0 left-0 z-50 px-4 md:px-12 py-0 flex items-center justify-between bg-black/90 backdrop-blur-md border-b border-zinc-900 h-14">
         <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 md:gap-3 cursor-pointer group">
             <div class="w-6 h-6 md:w-7 md:h-7 bg-white text-black rounded-lg flex items-center justify-center font-bold text-xs group-hover:bg-amber-600 group-hover:text-white transition duration-300">W</div>
-            <span class="font-extrabold tracking-widest uppercase text-xs text-white group-hover:text-amber-500 transition duration-300">Ferwap Music</span>
+            <!-- NAMA BRAND DIUBAH MENJADI FERWAP SAJA -->
+            <span class="font-extrabold tracking-widest uppercase text-xs text-white group-hover:text-amber-500 transition duration-300">Ferwap</span>
         </a>
 
         <nav class="flex items-center gap-1 sm:gap-4 md:gap-6 text-[11px] sm:text-xs font-semibold tracking-wider text-zinc-300">
@@ -222,17 +223,17 @@
             </footer>
         </section>
 
-        <!-- HALAMAN: EXECUTIVES (KARTU RINGKAS & TANPA VIDEO) -->
+        <!-- HALAMAN: EXECUTIVES (JARAK ANTAR KARTU DIRAPATKAN) -->
         <section id="page-executive" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
             <div class="max-w-6xl mx-auto my-auto pt-6 pb-12 text-left animate-fade-in w-full space-y-8">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Executives</h2>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
                     
-                    <!-- Kolom Kiri: Kartu Eksekutif Ukuran Ringkas (Max Width Dibatasi) -->
-                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Kolom Kiri: Kartu Eksekutif (Jarak gap-3 dirapatkan) -->
+                    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                         <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group max-w-[260px]">
                             <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
                                 <img src="3H3D.jpeg" alt="Abednego Totouw" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
@@ -245,7 +246,7 @@
                         </div>
                     </div>
 
-                    <!-- Kolom Kanan: Hanya FAQ Box (Video Sudah Dihapus) -->
+                    <!-- Kolom Kanan: FAQ Box -->
                     <div class="lg:col-span-1 space-y-8 max-w-[320px]">
                         <div class="bg-zinc-900 border border-zinc-800 rounded p-6 text-center space-y-4">
                             <h3 class="text-xl font-bold text-amber-500">Have a Question for Ferwap Music?</h3>
@@ -302,17 +303,18 @@
             </footer>
         </section>
 
-        <!-- HALAMAN 4: FEATURED ARTISTS (KARTU UKURAN RINGKAS) -->
+        <!-- HALAMAN 4: FEATURED ARTISTS (JARAK ANTAR KARTU SANGAT RAPAT - GAP-4) -->
         <section id="page-artists" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
             <div class="max-w-6xl mx-auto space-y-8 my-auto pt-6 pb-12 text-left animate-fade-in w-full">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Featured Artists</h2>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Grid Kartu Artis dengan gap-4 (Rapat & Berdempetan Rapi) -->
+                <div class="flex flex-wrap gap-4 items-start">
                     
-                    <!-- Artist 1: 3H3D (Max Width 260px agar rapi dan tidak terlalu besar) -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group max-w-[260px]">
+                    <!-- Artist 1: 3H3D -->
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
                         <a href="https://3h3dofficial.web.id" target="_blank" class="block w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="3H3D.jpeg" alt="3H3D" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </a>
@@ -323,7 +325,7 @@
                     </div>
 
                     <!-- Artist 2: ANDER -->
-                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group max-w-[260px]">
+                    <div class="bg-zinc-900 border border-amber-900/30 rounded overflow-hidden shadow-lg brown-card group w-full max-w-[260px]">
                         <div class="w-full aspect-square bg-zinc-800 overflow-hidden relative">
                             <img src="ANDER.jpg" alt="ANDER" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500">
                         </div>
