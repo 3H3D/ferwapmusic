@@ -16,27 +16,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
-        html, body {
-            background-color: #000000;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        header {
+       header {
     border-bottom: none !important;
     box-shadow: none !important;
 }
-/* Memaksa menghilangkan border dan garis siku pada kotak dropdown */
-header .absolute, 
+/* Menyamakan warna border dropdown agar tidak terlihat */
 header div[class*="absolute"] {
-    border: none !important;
-    border-width: 0 !important;
-    outline: none !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+    border-color: #09090b !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8) !important;
 }
+        
         
         /* Pengaturan Animasi Global */
         @keyframes fadeInUp {
