@@ -843,6 +843,15 @@
                 }
             }, 100);
         }
+        // Tambahkan kode ini di sini
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash === '#privacy') {
+        switchPage('privacy');
+    } else if (hash === '#terms') {
+        switchPage('terms');
+    }
+});
 
         const slides = [
             {
