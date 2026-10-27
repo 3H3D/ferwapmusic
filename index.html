@@ -136,14 +136,14 @@
                 </div>
             </div>
 
-            <!-- DROPDOWN NEWS (HANYA 2: NEWS & DISCOGRAPHY) -->
+            <!-- DROPDOWN NEWS -->
             <div class="relative group h-14 flex items-center">
                 <button onclick="switchPage('news')" class="px-3 py-1.5 rounded transition text-zinc-300 group-hover:text-amber-400 group-hover:bg-zinc-900/80 flex items-center gap-1 focus:outline-none">
                     News <i class="fa-solid fa-chevron-down text-[9px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
                 </button>
                 
                 <div class="absolute left-0 top-14 hidden group-hover:flex flex-col bg-zinc-950/95 border border-amber-900/40 backdrop-blur-lg shadow-2xl min-w-[200px] py-1.5 z-50 text-[11px] rounded-b-lg animate-fade-in">
-                    <button onclick="scrollToSection('news-releases')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">1. Press Releases</button>
+                    <button onclick="scrollToSection('news-releases')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">1. News & Press</button>
                     <button onclick="scrollToSection('news-discography')" class="px-4 py-2 text-left text-zinc-300 hover:text-amber-400 hover:bg-zinc-900 transition">2. Discography & Catalog</button>
                 </div>
             </div>
@@ -290,7 +290,7 @@
         <section id="page-news" class="page-section w-full flex-col justify-between px-6 md:px-12 py-10 bg-black">
             <div class="max-w-6xl mx-auto space-y-10 my-auto pt-8 pb-12 animate-fade-in w-full text-left">
                 
-                <!-- BAGIAN 1: NEWS & PRESS (BERSIH TANPA FOTO ARTIS) -->
+                <!-- BAGIAN 1: NEWS & PRESS -->
                 <div id="news-releases" class="space-y-4">
                     <div class="text-center space-y-1">
                         <span class="text-xs font-bold tracking-widest text-amber-600 uppercase">Updates & Press</span>
@@ -300,7 +300,6 @@
                         </p>
                     </div>
 
-                    <!-- Kartu Berita / Rilis Terbaru (Murni Teks Berita & Pengumuman) -->
                     <div class="bg-zinc-900/90 border border-amber-900/40 p-6 rounded-lg space-y-3 max-w-4xl mx-auto shadow-lg">
                         <div class="flex items-center gap-2">
                             <span class="text-[9px] bg-amber-600 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider">Official Announcement</span>
@@ -313,55 +312,235 @@
                     </div>
                 </div>
 
-                <!-- BAGIAN 2: DISCOGRAPHY & CATALOG -->
+                <!-- BAGIAN 2: DISCOGRAPHY & CATALOG (SELURUH LAGU DARI MUSICBRAINZ) -->
                 <div id="news-discography" class="pt-6 border-t border-zinc-900">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         
-                        <!-- KOLOM KIRI: DAFTAR LAGU (TEKS BIASA, KLIK KE YOUTUBE) -->
+                        <!-- KOLOM KIRI: DAFTAR KESELURUHAN LAGU -->
                         <div class="lg:col-span-2 space-y-4">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-xl font-bold text-amber-500 uppercase tracking-wider">Discography & Catalog</h3>
                             </div>
-                            <!-- Catatan Teks Biasa Tanpa Link -->
                             <p class="text-xs text-zinc-400 font-light">
                                 Explore the official discography and independent music catalog from Ferwap Music Entertainment.
                             </p>
 
                             <div class="space-y-3 pt-2">
-                                <!-- LAGU 1 -->
+                                <!-- 1 -->
                                 <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=4yGWl7lwwUY" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Kihai+Ababi" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">01.</span> 
-                                        <span class="group-hover:underline">Sogdai Ya</span>
+                                        <span class="group-hover:underline">Kihai Ababi</span>
                                     </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D,Brecko & ANDER &bull; Single &bull; 2026</p>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2019-05-31</p>
                                 </div>
-
-                                <!-- LAGU 2 -->
+                                <!-- 2 -->
                                 <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=MJS3ca-VP-8" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Sekolah+Kabari" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">02.</span> 
-                                        <span class="group-hover:underline">Kwiregtori</span>
+                                        <span class="group-hover:underline">Sekolah Kabari</span>
                                     </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D,Ompi,ANDER & Melchior &bull; Single &bull; 2026</p>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2019-06-04</p>
                                 </div>
-
-                                <!-- LAGU 3 -->
+                                <!-- 3 -->
                                 <div class="border-b border-zinc-900 pb-3">
-                                    <a href="https://www.youtube.com/watch?v=H9o2nzykIso" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Sore" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">03.</span> 
-                                        <span class="group-hover:underline">TORU RE</span>
+                                        <span class="group-hover:underline">Sore</span>
                                     </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D,Ompi & ANDER &bull; Single &bull; 2026</p>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2019-07-04</p>
                                 </div>
-
-                                <!-- LAGU 4 -->
-                                <div class="pb-2">
-                                    <a href="https://www.youtube.com/watch?v=acjp11UXUeA" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                <!-- 4 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Aiye+Ouje" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
                                         <span class="text-amber-600 font-mono text-xs">04.</span> 
-                                        <span class="group-hover:underline">Og Wesa</span>
+                                        <span class="group-hover:underline">Aiye Ouje</span>
                                     </a>
-                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">3H3D &bull; Single &bull; 2026</p>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2019-09-28</p>
+                                </div>
+                                <!-- 5 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Collection+-+Ferrson" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">05.</span> 
+                                        <span class="group-hover:underline">Collection - Ferrson</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Album &bull; 2019-11-30</p>
+                                </div>
+                                <!-- 6 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Rouffaer+Boys" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">06.</span> 
+                                        <span class="group-hover:underline">Rouffaer Boys</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; EP &bull; 2020-11-04</p>
+                                </div>
+                                <!-- 7 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Colletion" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">07.</span> 
+                                        <span class="group-hover:underline">Colletion</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Album &bull; 2021-04-27</p>
+                                </div>
+                                <!-- 8 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Wahaiya" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">08.</span> 
+                                        <span class="group-hover:underline">Wahaiya</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2021-09-26</p>
+                                </div>
+                                <!-- 9 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Afra+Hueco" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">09.</span> 
+                                        <span class="group-hover:underline">Afra Hueco</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2021-10-23</p>
+                                </div>
+                                <!-- 10 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Buegh+Hueco" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">10.</span> 
+                                        <span class="group-hover:underline">Buegh Hueco</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2021-10-24</p>
+                                </div>
+                                <!-- 11 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Salomina" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">11.</span> 
+                                        <span class="group-hover:underline">Salomina</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2021-11-17</p>
+                                </div>
+                                <!-- 12 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Brecko+Ika+Hikeie" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">12.</span> 
+                                        <span class="group-hover:underline">Ika Hikeie</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson & Brecko &bull; Single &bull; 2022-04-22</p>
+                                </div>
+                                <!-- 13 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Kahia+Bekobei" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">13.</span> 
+                                        <span class="group-hover:underline">Kahia Bekobei</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2022-04-23</p>
+                                </div>
+                                <!-- 14 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Hesai+Huarawa" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">14.</span> 
+                                        <span class="group-hover:underline">Hesai Huarawa</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2022-09-15</p>
+                                </div>
+                                <!-- 15 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Album" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">15.</span> 
+                                        <span class="group-hover:underline">Ferrson (Album)</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Album &bull; 2023-09-29</p>
+                                </div>
+                                <!-- 16 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Airetie" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">16.</span> 
+                                        <span class="group-hover:underline">Airetie</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-06</p>
+                                </div>
+                                <!-- 17 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Are+Are+Firiwa" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">17.</span> 
+                                        <span class="group-hover:underline">Are Are Firiwa</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-21</p>
+                                </div>
+                                <!-- 18 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Are+Firiwa" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">18.</span> 
+                                        <span class="group-hover:underline">Are Firiwa</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2023-12-23</p>
+                                </div>
+                                <!-- 19 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Ture+Ture" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">19.</span> 
+                                        <span class="group-hover:underline">Ture Ture</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-02-17</p>
+                                </div>
+                                <!-- 20 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Afraya+Empa" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">20.</span> 
+                                        <span class="group-hover:underline">Afraya Empa</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
+                                </div>
+                                <!-- 21 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Awahaiyabu+Sariwaraibio" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">21.</span> 
+                                        <span class="group-hover:underline">Awahaiyabu Sariwaraibio</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
+                                </div>
+                                <!-- 22 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Yesus+Dierorie" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">22.</span> 
+                                        <span class="group-hover:underline">Yesus Dierorie</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2024-03-27</p>
+                                </div>
+                                <!-- 23 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Oraig+We" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">23.</span> 
+                                        <span class="group-hover:underline">Oraig We</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-03-10</p>
+                                </div>
+                                <!-- 24 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Ise+Tugue" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">24.</span> 
+                                        <span class="group-hover:underline">Ise Tugue</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-03-11</p>
+                                </div>
+                                <!-- 25 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Dori" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">25.</span> 
+                                        <span class="group-hover:underline">Dori</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-11-16</p>
+                                </div>
+                                <!-- 26 -->
+                                <div class="border-b border-zinc-900 pb-3">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Flaki" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">26.</span> 
+                                        <span class="group-hover:underline">Flaki</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2025-11-16</p>
+                                </div>
+                                <!-- 27 -->
+                                <div class="pb-2">
+                                    <a href="https://www.youtube.com/results?search_query=Ferrson+Toteko" target="_blank" class="text-sm md:text-base font-semibold text-zinc-200 hover:text-amber-400 transition flex items-center gap-2 group">
+                                        <span class="text-amber-600 font-mono text-xs">27.</span> 
+                                        <span class="group-hover:underline">Toteko</span>
+                                    </a>
+                                    <p class="text-xs text-zinc-500 pl-6 mt-0.5">Ferrson &bull; Single &bull; 2026-06-27</p>
                                 </div>
                             </div>
                         </div>
