@@ -25,13 +25,16 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-       header {
+        header {
     border-bottom: none !important;
     box-shadow: none !important;
 }
-header div[class*="absolute"] {
+/* Menghilangkan border secara mutlak pada seluruh elemen dropdown di dalam header */
+header .absolute, 
+header div[class*="absolute"], 
+header div[class*="border"] {
     border: none !important;
-    outline: none !important;
+    border-width: 0 !important;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
 }
         
